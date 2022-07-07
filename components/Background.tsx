@@ -1,3 +1,5 @@
+import styles from "../styles/Background.module.css";
+
 const Background = () => {
   const colors = [
     "#F9DB57",
@@ -8,7 +10,7 @@ const Background = () => {
     "#40BFB0",
   ];
   return (
-    <div className="backGroundSVG">
+    <div className={styles.backGroundSVG}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
         {Array.from(Array(100).keys()).map((n, i) => (
           <rect

@@ -1,0 +1,9 @@
+.backGroundSVG {
+  width: max(100vw, 100vh);
+  height: max(100vw, 100vh);
+  position: fixed;
+}
+.backGroundSVG > svg {
+  width: max(100vw, 100vh);
+  height: max(100vw, 100vh);
+}
