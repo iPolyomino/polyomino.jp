@@ -22,7 +22,7 @@
   }
 }
 
-.st0 {
+.stroke {
   animation: css_anime 3s linear normal;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -31,7 +31,7 @@
   -webkit-animation-iteration-count: 1;
 }
 
-.st1 {
+.reverseStroke {
   animation: reverse_css_anime -3s linear normal;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
