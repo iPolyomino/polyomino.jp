@@ -4,7 +4,10 @@ import Grid from "@mui/material/Grid";
 
 import Hagi from "../components/Hagi";
 import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
+import Article from "../components/Article";
 import Footer from "../components/Footer";
+
+import { articles } from "../contents/article.json";
 
 const Home: NextPage = () => {
   return (
@@ -25,9 +28,13 @@ const Home: NextPage = () => {
         >
           <Hagi />
         </Grid>
-        <Grid item>
-          <Footer />
-        </Grid>
+        {articles.map((data: any) => (
+          <Article title={data.title} />
+        ))}
+
+        <Article title="test" />
+        <Article title="test" />
+        <Footer />
       </CenterrizedHorizontalGrid>
     </>
   );

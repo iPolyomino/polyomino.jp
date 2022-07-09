@@ -12,10 +12,9 @@ const CenterrizedHorizontalGrid = ({ children }: Props) => {
       direction="column"
       justifyContent="center"
       alignItems="center"
-      spacing={2}
       style={{ minHeight: "100vh" }}
     >
-      <Grid item xs={12} sm={10}>
+      <Grid item xs={12} sm={10} display="grid" gap={4}>
         {children}
       </Grid>
     </Grid>
