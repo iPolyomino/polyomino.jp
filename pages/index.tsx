@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 
 import Hagi from "../components/Hagi";
 import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -16,8 +17,6 @@ const Home: NextPage = () => {
       <CenterrizedHorizontalGrid>
         <Grid
           item
-          xs={12}
-          sm={8}
           container
           direction="column"
           justifyContent="center"
@@ -27,7 +26,7 @@ const Home: NextPage = () => {
           <Hagi />
         </Grid>
         <Grid item>
-          <Hagi />
+          <Footer />
         </Grid>
       </CenterrizedHorizontalGrid>
     </>

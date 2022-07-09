@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/Background.module.css";
 
 const Background = () => {
-  const [colorlist, setColorlist] = useState<String[]>([]);
+  const [colorlist, setColorlist] = useState<string[]>([]);
 
   const colors = [
     "#F9DB57",

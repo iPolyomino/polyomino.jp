@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 interface Props {
   children?: React.ReactNode;
@@ -14,7 +15,9 @@ const CenterrizedHorizontalGrid = ({ children }: Props) => {
       spacing={2}
       style={{ minHeight: "100vh" }}
     >
-      {children}
+      <Grid item xs={12} sm={10}>
+        {children}
+      </Grid>
     </Grid>
   );
 };
