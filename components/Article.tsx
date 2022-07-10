@@ -54,8 +54,11 @@ const Article = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          {data.sentence.links.map((link, i) => (
+            <Button href={link.url} size="small" key={i}>
+              {link.name}
+            </Button>
+          ))}
         </CardActions>
       </article>
     </ContentsCard>
