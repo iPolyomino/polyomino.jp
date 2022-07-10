@@ -16,23 +16,25 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Hagi</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Hagi's portfolio website." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CenterrizedHorizontalGrid>
         <Grid
-          item
           container
-          direction="column"
           justifyContent="center"
           alignItems="center"
           style={{ minHeight: "100vh" }}
         >
           <Hagi />
         </Grid>
-        {articles.map((data: ArticleData, i) => (
-          <Article data={data} key={i} />
-        ))}
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
+          {articles.map((data: ArticleData, i) => (
+            <Grid item xs={12} md={6} key={i}>
+              <Article data={data} />
+            </Grid>
+          ))}
+        </Grid>
         <Footer />
       </CenterrizedHorizontalGrid>
     </>

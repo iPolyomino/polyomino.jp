@@ -5,16 +5,16 @@ import styles from "../styles/Background.module.css";
 const Background = () => {
   const [colorlist, setColorlist] = useState<string[]>([]);
 
-  const colors = [
-    "#F9DB57",
-    "#E6855E",
-    "#B75C9D",
-    "#9D73BB",
-    "#42AAC7",
-    "#40BFB0",
-  ];
-
   useEffect(() => {
+    const colors = [
+      "#F9DB57",
+      "#E6855E",
+      "#B75C9D",
+      "#9D73BB",
+      "#42AAC7",
+      "#40BFB0",
+    ];
+
     setColorlist(
       [...Array(100)].map(
         () => colors[Math.floor(Math.random() * colors.length)]

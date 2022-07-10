@@ -9,7 +9,7 @@ const CenterrizedHorizontalGrid = ({ children }: Props) => {
   return (
     <Grid
       container
-      direction="column"
+      columns={12}
       justifyContent="center"
       alignItems="center"
       style={{ minHeight: "100vh" }}

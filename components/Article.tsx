@@ -1,5 +1,7 @@
+import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 
 import ContentsCard from "./ContentsCard";
@@ -47,7 +49,14 @@ const Article = (props: Props) => {
           <Typography gutterBottom variant="h5" component="div">
             {data.title}
           </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {data.sentence.text}
+          </Typography>
         </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
       </article>
     </ContentsCard>
   );
