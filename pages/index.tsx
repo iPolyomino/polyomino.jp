@@ -7,6 +7,8 @@ import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
 
+import { ArticleData } from "../types/ArticleData";
+
 import { articles } from "../contents/article.json";
 
 const Home: NextPage = () => {
@@ -28,12 +30,9 @@ const Home: NextPage = () => {
         >
           <Hagi />
         </Grid>
-        {articles.map((data: any) => (
-          <Article title={data.title} />
+        {articles.map((data: ArticleData, i) => (
+          <Article data={data} key={i} />
         ))}
-
-        <Article title="test" />
-        <Article title="test" />
         <Footer />
       </CenterrizedHorizontalGrid>
     </>

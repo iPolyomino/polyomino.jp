@@ -2,8 +2,8 @@
   "articles": [
     {
       "media": {
-        "webp": "supercell.webp",
-        "png": "supercell.png",
+        "webp": "chat.webp",
+        "png": "chat.png",
         "alt": "2005年を彷彿とさせるチャットアプリケーションのスクリーンショット"
       },
       "title": "ちょっとちゃっと",
@@ -166,8 +166,8 @@
     },
     {
       "media": {
-        "webp": "CasAA.webp",
-        "png": "CasAA.png",
+        "webp": "casaa.webp",
+        "png": "casaa.png",
         "alt": "ツイキャスに投稿するテキストの編集画面。アプリケーションのスクリーンショット"
       },
       "title": "CasAA",
@@ -183,8 +183,8 @@
     },
     {
       "media": {
-        "webp": "TRPG_DICE.webp",
-        "png": "TRPG_DICE.png",
+        "webp": "trpg_dice.webp",
+        "png": "trpg_dice.png",
         "alt": "電卓風のボタン配置がされている乱数発生装置のスクリーンショット"
       },
       "title": "TRPG DICE",
