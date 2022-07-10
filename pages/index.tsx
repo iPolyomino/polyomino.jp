@@ -9,9 +9,10 @@ import Footer from "../components/Footer";
 
 import { ArticleData } from "../types/ArticleData";
 
-import { articles } from "../contents/article.json";
+import { default as articlesJson } from "../contents/article.json";
 
 const Home: NextPage = () => {
+  const { articles } = articlesJson;
   return (
     <>
       <Head>
