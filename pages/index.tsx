@@ -9,9 +9,11 @@ import Footer from "../components/Footer";
 
 import { ArticleData } from "../types/ArticleData";
 
+import { default as aboutmeJson } from "../contents/aboutme.json";
 import { default as articlesJson } from "../contents/article.json";
 
 const Home: NextPage = () => {
+  const { aboutme } = aboutmeJson;
   const { articles } = articlesJson;
   return (
     <>
@@ -30,13 +32,18 @@ const Home: NextPage = () => {
           <Hagi />
         </Grid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
+          <Grid item xs={12}>
+            <Article data={aboutme} />
+          </Grid>
           {articles.map((data: ArticleData, i) => (
             <Grid item xs={12} md={6} key={i}>
               <Article data={data} />
             </Grid>
           ))}
+          <Grid item xs={12}>
+            <Footer />
+          </Grid>
         </Grid>
-        <Footer />
       </CenterrizedHorizontalGrid>
     </>
   );

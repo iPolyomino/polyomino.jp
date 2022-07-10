@@ -6,11 +6,35 @@ import Typography from "@mui/material/Typography";
 
 import ContentsCard from "./ContentsCard";
 
-import { ArticleData } from "../types/ArticleData";
+import { ArticleData, Media } from "../types/ArticleData";
 
 interface Props {
   data: ArticleData;
 }
+
+const Picture = ({ media }: { media: Media }) => (
+  <picture>
+    {media.webp && <source srcSet={media.webp} type="image/webp" />}
+    {media.jpg && <source srcSet={media.jpg} type="image/jpeg" />}
+    {media.png && <source srcSet={media.png} type="image/png" />}
+    {media.jpg && (
+      <CardMedia
+        component="img"
+        src={media.jpg}
+        loading="lazy"
+        alt={media.alt}
+      />
+    )}
+    {media.png && (
+      <CardMedia
+        component="img"
+        src={media.png}
+        loading="lazy"
+        alt={media.alt}
+      />
+    )}
+  </picture>
+);
 
 const Article = (props: Props) => {
   const { data } = props;
@@ -18,33 +42,7 @@ const Article = (props: Props) => {
   return (
     <ContentsCard>
       <article>
-        <picture>
-          {data.media.webp && (
-            <source srcSet={data.media.webp} type="image/webp" />
-          )}
-          {data.media.jpg && (
-            <source srcSet={data.media.jpg} type="image/jpeg" />
-          )}
-          {data.media.png && (
-            <source srcSet={data.media.png} type="image/png" />
-          )}
-          {data.media.jpg && (
-            <CardMedia
-              component="img"
-              src={data.media.jpg}
-              loading="lazy"
-              alt={data.media.alt}
-            />
-          )}
-          {data.media.png && (
-            <CardMedia
-              component="img"
-              src={data.media.png}
-              loading="lazy"
-              alt={data.media.alt}
-            />
-          )}
-        </picture>
+        {data.media && <Picture media={data.media} />}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {data.title}

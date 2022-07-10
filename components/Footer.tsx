@@ -6,13 +6,11 @@ import ContentsCard from "./ContentsCard";
 const Footer = () => {
   return (
     <footer>
-      <Box sx={{ my: 2 }}>
-        <Card>
-          <Box p={2} sx={{ textAlign: "right" }}>
-            &copy; {new Date().getFullYear()} Hagi
-          </Box>
-        </Card>
-      </Box>
+      <Card>
+        <Box p={2} sx={{ textAlign: "right" }}>
+          &copy; {new Date().getFullYear()} Hagi
+        </Box>
+      </Card>
     </footer>
   );
 };

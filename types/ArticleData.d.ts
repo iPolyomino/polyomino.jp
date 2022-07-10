@@ -17,6 +17,6 @@ export interface Sentence {
 
 export interface ArticleData {
   title: string;
-  media: Media;
+  media?: Media;
   sentence: Sentence;
 }
