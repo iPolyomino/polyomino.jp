@@ -1,0 +1,21 @@
+{
+  "appendix": [
+    {
+      "title": "ポリオミノ(Polyomino)",
+      "sentence": {
+        "text": "複数の正方形を辺でつなげた多角形。また、それを長方形など指定の形に隙間なく並べるパズル。"
+      }
+    },
+    {
+      "title": "ほしい物リスト",
+      "sentence": {
+        "links": [
+          {
+            "name": "買って♥",
+            "url": "http://amzn.asia/0XqBHa7"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 
 import ContentsCard from "./ContentsCard";
 
-import { ArticleData, Media } from "../types/ArticleData";
+import { ArticleData, Media, Link } from "../types/ArticleData";
 
 interface Props {
   data: ArticleData;
@@ -36,6 +36,12 @@ const Picture = ({ media }: { media: Media }) => (
   </picture>
 );
 
+const Links = ({ link }: { link: Link }) => (
+  <Button href={link.url} size="small">
+    {link.name}
+  </Button>
+);
+
 const Article = (props: Props) => {
   const { data } = props;
 
@@ -52,11 +58,8 @@ const Article = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          {data.sentence.links.map((link, i) => (
-            <Button href={link.url} size="small" key={i}>
-              {link.name}
-            </Button>
-          ))}
+          {data.sentence.links &&
+            data.sentence.links.map((link, i) => <Links link={link} key={i} />)}
         </CardActions>
       </article>
     </ContentsCard>

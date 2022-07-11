@@ -11,10 +11,12 @@ import { ArticleData } from "../types/ArticleData";
 
 import { default as aboutmeJson } from "../contents/aboutme.json";
 import { default as articlesJson } from "../contents/article.json";
+import { default as appendixJson } from "../contents/appendix.json";
 
 const Home: NextPage = () => {
   const { aboutme } = aboutmeJson;
   const { articles } = articlesJson;
+  const { appendix } = appendixJson;
   return (
     <>
       <Head>
@@ -37,6 +39,11 @@ const Home: NextPage = () => {
           </Grid>
           {articles.map((data: ArticleData, i) => (
             <Grid item xs={12} md={6} key={i}>
+              <Article data={data} />
+            </Grid>
+          ))}
+          {appendix.map((data, i) => (
+            <Grid item xs={12} key={i}>
               <Article data={data} />
             </Grid>
           ))}

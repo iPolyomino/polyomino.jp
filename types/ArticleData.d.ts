@@ -11,8 +11,8 @@ export interface Link {
 }
 
 export interface Sentence {
-  text: string;
-  links: Link[];
+  text?: string;
+  links?: Link[];
 }
 
 export interface ArticleData {
