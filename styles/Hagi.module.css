@@ -1,4 +1,5 @@
 .nameLayer {
+  width: 80vw;
   max-width: 800px;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
