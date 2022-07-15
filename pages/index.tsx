@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
+import NavigationBar from "../components/NavigationBar";
 import Hagi from "../components/Hagi";
 import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
 import Article from "../components/Article";
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Hagi's portfolio website." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid
           container
