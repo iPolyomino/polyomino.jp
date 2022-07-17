@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -12,28 +13,32 @@ interface Props {
   data: ArticleData;
 }
 
-const Picture = ({ media }: { media: Media }) => (
-  <picture>
-    {media.webp && <source srcSet={media.webp} type="image/webp" />}
-    {media.jpg && <source srcSet={media.jpg} type="image/jpeg" />}
-    {media.png && <source srcSet={media.png} type="image/png" />}
-    {media.jpg && (
-      <CardMedia
-        component="img"
-        src={media.jpg}
-        loading="lazy"
-        alt={media.alt}
-      />
-    )}
-    {media.png && (
-      <CardMedia
-        component="img"
-        src={media.png}
-        loading="lazy"
-        alt={media.alt}
-      />
-    )}
-  </picture>
+const Media = ({ media }: { media: Media }) => (
+  <CardMedia style={{ height: "min(300px, 50vw)" }}>
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      <picture>
+        {media.webp && <source srcSet={media.webp} type="image/webp" />}
+        {media.jpg && <source srcSet={media.jpg} type="image/jpeg" />}
+        {media.png && <source srcSet={media.png} type="image/png" />}
+        {media.jpg && (
+          <Image
+            src={`/image/${media.jpg}`}
+            alt={media.alt}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
+        {media.png && (
+          <Image
+            src={`/image/${media.png}`}
+            alt={media.alt}
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
+      </picture>
+    </div>
+  </CardMedia>
 );
 
 const Links = ({ link }: { link: Link }) => (
@@ -48,7 +53,7 @@ const Article = (props: Props) => {
   return (
     <ContentsCard>
       <article>
-        {data.media && <Picture media={data.media} />}
+        {data.media && <Media media={data.media} />}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {data.title}
