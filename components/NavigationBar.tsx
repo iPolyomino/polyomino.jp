@@ -16,8 +16,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+interface NavLink {
+  title: string;
+  link: string;
+}
+
 const NavigationBar = () => {
-  const navItems = ["Home", "About", "Blog", "Hobby"];
+  const navItems: NavLink[] = [
+    { title: "Home", link: "/" },
+    { title: "About", link: "/aboutme" },
+    { title: "Blog", link: "/blog" },
+    { title: "Hobby", link: "/hobby" },
+  ];
   const drawerWidth = 240;
 
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,10 +53,10 @@ const NavigationBar = () => {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+        {navItems.map(({ title, link }, i) => (
+          <ListItem key={i} disablePadding>
+            <ListItemButton href={link} sx={{ textAlign: "center" }}>
+              <ListItemText primary={title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -87,9 +97,9 @@ const NavigationBar = () => {
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button size="large" key={item} sx={{ color: "#fff" }}>
-                  {item}
+              {navItems.map(({ title, link }, i) => (
+                <Button href={link} size="large" key={i} sx={{ color: "#fff" }}>
+                  {title}
                 </Button>
               ))}
             </Box>
