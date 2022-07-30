@@ -1,23 +1,33 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
 import NavigationBar from "../components/NavigationBar";
-import Hagi from "../components/Hagi";
 import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
 import Article from "../components/Article";
+import RawArticle from "../components/RawArticle";
 import Footer from "../components/Footer";
 
-import { ArticleData } from "../types/ArticleData";
+import { getMarkdownFile } from "../lib/api";
+import { markdownToHTML } from "../lib/markdownToHTML";
 
 import { default as aboutmeJson } from "../contents/aboutme.json";
-import { default as articlesJson } from "../contents/article.json";
-import { default as appendixJson } from "../contents/appendix.json";
 
-const AboutMe: NextPage = () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+export const getStaticProps = async () => {
+  const aboutmeMarkdown = getMarkdownFile("aboutme");
+  const aboutmeHTML = await markdownToHTML(aboutmeMarkdown);
+  return {
+    props: {
+      aboutmeHTML,
+    },
+  };
+};
+
+const AboutMe: NextPage<Props> = ({ aboutmeHTML }) => {
   const { aboutme } = aboutmeJson;
-  const { articles } = articlesJson;
-  const { appendix } = appendixJson;
+
   return (
     <>
       <Head>
@@ -30,6 +40,9 @@ const AboutMe: NextPage = () => {
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
             <Article data={aboutme} />
+          </Grid>
+          <Grid item xs={12}>
+            <RawArticle html={aboutmeHTML} />
           </Grid>
           <Grid item xs={12}>
             <Footer />
