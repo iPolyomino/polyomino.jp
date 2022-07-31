@@ -13,16 +13,18 @@ interface Props {
   data: ArticleData;
 }
 
+const source = (filename: string) => `/image/${filename}`;
+
 const Media = ({ media }: { media: Media }) => (
   <CardMedia style={{ height: "min(300px, 50vw)" }}>
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <picture>
-        {media.webp && <source srcSet={media.webp} type="image/webp" />}
-        {media.jpg && <source srcSet={media.jpg} type="image/jpeg" />}
-        {media.png && <source srcSet={media.png} type="image/png" />}
+        {media.webp && <source srcSet={source(media.webp)} type="image/webp" />}
+        {media.jpg && <source srcSet={source(media.jpg)} type="image/jpeg" />}
+        {media.png && <source srcSet={source(media.png)} type="image/png" />}
         {media.jpg && (
           <Image
-            src={`/image/${media.jpg}`}
+            src={source(media.jpg)}
             alt={media.alt}
             layout="fill"
             objectFit="cover"
@@ -30,7 +32,7 @@ const Media = ({ media }: { media: Media }) => (
         )}
         {media.png && (
           <Image
-            src={`/image/${media.png}`}
+            src={source(media.png)}
             alt={media.alt}
             layout="fill"
             objectFit="cover"
