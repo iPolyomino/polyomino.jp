@@ -1,0 +1,12 @@
+env: standard
+
+runtime: nodejs16
+
+instance_class: F4
+
+service: default
+
+default_expiration: "12h"
+
+automatic_scaling:
+  min_instances: 0
