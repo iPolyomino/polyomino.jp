@@ -13,7 +13,7 @@ interface Props {
   data: ArticleData;
 }
 
-const source = (filename: string) => `/image/${filename}`;
+const source = (filename: string) => `/images/${filename}`;
 
 const Media = ({ media }: { media: Media }) => (
   <CardMedia style={{ height: "min(300px, 50vw)" }}>

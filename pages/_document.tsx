@@ -7,7 +7,7 @@ class MyDocument extends Document {
         <Head>
           <meta name="application-name" content="polyomino.jp" />
 
-          <link rel="apple-touch-icon" href="/icon/256x256.png" />
+          <link rel="apple-touch-icon" href="/icons/256x256.png" />
 
           <meta name="theme-color" content="#FFFFFF" />
           <link rel="manifest" href="/manifest.json" />
