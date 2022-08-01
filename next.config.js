@@ -10,7 +10,5 @@ const settings = {
   reactStrictMode: true,
 };
 
-console.log(process.env.NODE_ENV);
-
 module.exports =
   process.env.NODE_ENV === "development" ? settings : withPWA(settings);
