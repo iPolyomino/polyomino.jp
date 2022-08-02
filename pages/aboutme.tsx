@@ -18,14 +18,17 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 export const getStaticProps = async () => {
   const aboutmeMarkdown = getMarkdownFile("aboutme");
   const aboutmeHTML = await markdownToHTML(aboutmeMarkdown);
+  const lifeMarkdown = getMarkdownFile("life");
+  const lifeHTML = await markdownToHTML(lifeMarkdown);
   return {
     props: {
       aboutmeHTML,
+      lifeHTML,
     },
   };
 };
 
-const AboutMe: NextPage<Props> = ({ aboutmeHTML }) => {
+const AboutMe: NextPage<Props> = ({ aboutmeHTML, lifeHTML }) => {
   const { aboutme } = aboutmeJson;
 
   return (
@@ -43,6 +46,9 @@ const AboutMe: NextPage<Props> = ({ aboutmeHTML }) => {
           </Grid>
           <Grid item xs={12}>
             <RawArticle html={aboutmeHTML} />
+          </Grid>
+          <Grid item xs={12}>
+            <RawArticle html={lifeHTML} />
           </Grid>
           <Grid item xs={12}>
             <Footer />
