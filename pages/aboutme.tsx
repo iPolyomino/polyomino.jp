@@ -16,10 +16,10 @@ import { default as aboutmeJson } from "../contents/aboutme.json";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-  const aboutmeMarkdown = getMarkdownFile("aboutme");
-  const aboutmeHTML = await markdownToHTML(aboutmeMarkdown);
-  const lifeMarkdown = getMarkdownFile("life");
-  const lifeHTML = await markdownToHTML(lifeMarkdown);
+  const html = ["aboutme", "life"]
+    .map((name) => getMarkdownFile(name))
+    .map((md) => markdownToHTML(md));
+  const [aboutmeHTML, lifeHTML] = await Promise.all(html);
   return {
     props: {
       aboutmeHTML,
