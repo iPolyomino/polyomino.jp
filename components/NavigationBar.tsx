@@ -105,6 +105,7 @@ const NavigationBar = () => {
             </Box>
           </Toolbar>
         </AppBar>
+        <Toolbar />
         <Box component="nav">
           <SwipeableDrawer
             variant="temporary"

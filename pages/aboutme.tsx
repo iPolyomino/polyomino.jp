@@ -34,7 +34,7 @@ const AboutMe: NextPage<Props> = ({ aboutmeHTML, lifeHTML }) => {
   return (
     <>
       <Head>
-        <title>Hagi</title>
+        <title>Hagi : aboutme</title>
         <meta name="description" content="Hagi's portfolio website." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
