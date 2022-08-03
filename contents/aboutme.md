@@ -67,7 +67,7 @@ In the university, I was involved in the development of interactive projection m
   - ドメインネタが好き
   - 2022 年 3 月 26 日現在、空いているおすすめドメイン ↓
     - でんぱ組.inc
-    - mihimaru .gt
+    - mihimaru.gt
 - 旅行先の北海道で地震にあって帰れなくなった話
   - 避難所での一泊は今でも記憶に残っている
 - 一回やめた社内システム開発のプログラミングバイトをもう一度始めた話
