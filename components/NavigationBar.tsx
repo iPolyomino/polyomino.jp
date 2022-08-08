@@ -66,9 +66,8 @@ const NavigationBar = () => {
 
   const darkTheme = createTheme({
     palette: {
-      mode: "dark",
       primary: {
-        main: "#1976d2",
+        main: "#9e9e9e",
       },
     },
   });
@@ -82,6 +81,7 @@ const NavigationBar = () => {
               variant="h5"
               component="div"
               sx={{ ml: 2, flexGrow: 1 }}
+              style={{ color: "white" }}
             >
               <Link href="/" passHref>
                 polyomino.jp
