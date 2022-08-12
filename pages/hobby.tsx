@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import NavigationBar from "../components/NavigationBar";
 import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
 import Ham from "../components/Ham";
+import ElectronicWork from "../components/ElectronicWork";
 import Footer from "../components/Footer";
 
 const Hobby: NextPage = () => {
@@ -20,6 +21,9 @@ const Hobby: NextPage = () => {
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
             <Ham />
+          </Grid>
+          <Grid item xs={12}>
+            <ElectronicWork />
           </Grid>
           <Grid item xs={12}>
             <Footer />
