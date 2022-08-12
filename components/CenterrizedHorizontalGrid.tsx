@@ -7,13 +7,7 @@ interface Props {
 
 const CenterrizedHorizontalGrid = ({ children }: Props) => {
   return (
-    <Grid
-      container
-      columns={12}
-      justifyContent="center"
-      alignItems="center"
-      style={{ minHeight: "100vh" }}
-    >
+    <Grid container columns={12} justifyContent="center" alignItems="center">
       <Grid item xs={12} sm={10} display="grid" gap={4} py={2}>
         <Box sx={{ mx: 2 }}>{children}</Box>
       </Grid>
