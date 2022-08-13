@@ -20,12 +20,14 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.1"
+    "remark-html": "^15.0.1",
+    "superjson": "^1.9.1"
   },
   "devDependencies": {
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
+    "babel-plugin-superjson-next": "^0.4.4",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.0",
     "eslint-config-prettier": "^8.5.0",

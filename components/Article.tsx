@@ -15,7 +15,7 @@ interface Props {
 
 const source = (filename: string) => `/images/${filename}`;
 
-const Media = ({ media }: { media: Media }) => (
+const Picture = ({ media }: { media: Media }) => (
   <CardMedia style={{ height: "min(300px, 50vw)" }}>
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       <picture>
@@ -55,7 +55,7 @@ const Article = (props: Props) => {
   return (
     <ContentsCard>
       <article>
-        {data.media && <Media media={data.media} />}
+        {data.media && <Picture media={data.media} />}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {data.title}
