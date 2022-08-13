@@ -8,6 +8,9 @@ const settings = {
     defaultLocale: "ja",
   },
   reactStrictMode: true,
+  pwa: {
+    dest: "public",
+  },
 };
 
 module.exports =
