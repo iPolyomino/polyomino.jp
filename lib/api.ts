@@ -11,7 +11,14 @@ export const getMarkdownFile = (filename: string) => {
   return content;
 };
 
-export const blogSummary = async () => {
+export const getPosts = () => {
+  const dirPath = path.join(process.cwd(), "contents", "posts");
+  const files = fs.readdirSync(dirPath);
+  const posts = files.map((filename) => filename.replace(/\.md$/, ""));
+  return posts;
+};
+
+export const blogSummary = () => {
   const dirPath = path.join(process.cwd(), "contents", "posts");
   const files = fs.readdirSync(dirPath);
   const posts = files
@@ -37,4 +44,17 @@ export const blogSummary = async () => {
       return article;
     });
   return posts;
+};
+
+export const getBlog = (fileName: string) => {
+  const filePath = path.join(
+    process.cwd(),
+    "contents",
+    "posts",
+    `${fileName}.md`
+  );
+
+  const { content } = matter.read(filePath);
+
+  return content;
 };
