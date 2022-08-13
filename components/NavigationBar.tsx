@@ -75,13 +75,12 @@ const NavigationBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={darkTheme}>
-        <AppBar component="nav" position="fixed">
+        <AppBar component="nav" position="fixed" style={{ color: "white" }}>
           <Toolbar>
             <Typography
               variant="h5"
               component="div"
               sx={{ ml: 2, flexGrow: 1 }}
-              style={{ color: "white" }}
             >
               <Link href="/" passHref>
                 polyomino.jp
@@ -98,7 +97,12 @@ const NavigationBar = () => {
             </IconButton>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map(({ title, link }, i) => (
-                <Button href={link} size="large" key={i} sx={{ color: "#fff" }}>
+                <Button
+                  href={link}
+                  size="large"
+                  key={i}
+                  style={{ color: "white" }}
+                >
                   {title}
                 </Button>
               ))}
