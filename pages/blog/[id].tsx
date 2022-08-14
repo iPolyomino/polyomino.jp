@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 
 import NavigationBar from "../../components/NavigationBar";
 import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import RawArticle from "../../components/RawArticle";
+import BlogPage from "../../components/BlogPage";
 import Footer from "../../components/Footer";
 
 import { getPosts, getBlog } from "../../lib/api";
@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-const BlogPage: NextPage<Props> = ({ blog }) => {
+const Blog: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <Head>
@@ -50,7 +50,7 @@ const BlogPage: NextPage<Props> = ({ blog }) => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
-            <RawArticle html={blog} />
+            <BlogPage html={blog} />
           </Grid>
           <Grid item xs={12}>
             <Footer />
@@ -61,4 +61,4 @@ const BlogPage: NextPage<Props> = ({ blog }) => {
   );
 };
 
-export default BlogPage;
+export default Blog;
