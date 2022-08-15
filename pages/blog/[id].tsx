@@ -15,10 +15,11 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async (content: GetStaticPropsContext) => {
   if (content.params?.id === undefined) return;
-  const blogText = getBlog(content.params.id.toString());
-  const blog = await markdownToHTML(blogText);
+  const { data, article } = getBlog(content.params.id.toString());
+  const blog = await markdownToHTML(article);
   return {
     props: {
+      data,
       blog,
     },
   };
@@ -38,7 +39,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-const Blog: NextPage<Props> = ({ blog }) => {
+const Blog: NextPage<Props> = ({ data, blog }) => {
   return (
     <>
       <Head>
@@ -50,7 +51,7 @@ const Blog: NextPage<Props> = ({ blog }) => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
-            <BlogPage html={blog} />
+            <BlogPage data={data} html={blog} />
           </Grid>
           <Grid item xs={12}>
             <Footer />

@@ -54,7 +54,7 @@ export const getBlog = (fileName: string) => {
     `${fileName}.md`
   );
 
-  const { content } = matter.read(filePath);
+  const { data, content } = matter.read(filePath);
 
-  return content;
+  return { data, article: content };
 };
