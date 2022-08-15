@@ -2,12 +2,12 @@ import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
-import Article from "../components/Article";
-import Footer from "../components/Footer";
+import NavigationBar from "../../components/NavigationBar";
+import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
+import Article from "../../components/Article";
+import Footer from "../../components/Footer";
 
-import { blogSummary } from "../lib/api";
+import { blogSummary } from "../../lib/api";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
