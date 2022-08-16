@@ -117,9 +117,7 @@
 - [ ] 液化石油ガス設備士
 - [ ] 行政書士
 - [ ] フォークリフト運転技能講習
-- [ ] 無線系の免許
-  - https://www.tele.soumu.go.jp/j/ref/material/capacity/
-  - 気になったもの取る
+- [ ] [無線系の免許](https://www.tele.soumu.go.jp/j/ref/material/capacity/)
 
 ## 続けていくこと
 
