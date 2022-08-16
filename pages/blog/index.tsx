@@ -11,8 +11,8 @@ import { blogSummary } from "../../lib/api";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-export const getStaticProps = async () => {
-  const summary = await blogSummary();
+export const getStaticProps = () => {
+  const summary = blogSummary();
   return {
     props: {
       summary,

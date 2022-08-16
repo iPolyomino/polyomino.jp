@@ -9,7 +9,7 @@ import BlogPage from "../../components/BlogPage";
 import Footer from "../../components/Footer";
 
 import { getPosts, getBlog } from "../../lib/api";
-import { markdownToHTML } from "../../lib/markdownToHTML";
+import { markdownToHTML } from "../../lib/markdown";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

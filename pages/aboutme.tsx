@@ -9,7 +9,7 @@ import RawArticle from "../components/RawArticle";
 import Footer from "../components/Footer";
 
 import { getMarkdownFile } from "../lib/api";
-import { markdownToHTML } from "../lib/markdownToHTML";
+import { markdownToHTML } from "../lib/markdown";
 
 import { default as aboutmeJson } from "../contents/aboutme.json";
 
