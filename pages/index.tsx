@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 import NavigationBar from "../components/NavigationBar";
 import Hagi from "../components/Hagi";
@@ -27,13 +28,10 @@ const Home: NextPage = () => {
       </Head>
       <NavigationBar />
       <CenterrizedHorizontalGrid>
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          style={{ minHeight: "100vh" }}
-        >
-          <Hagi />
+        <Grid container justifyContent="center" alignItems="center">
+          <Box my={10}>
+            <Hagi />
+          </Box>
         </Grid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
