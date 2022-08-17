@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -17,29 +16,25 @@ const source = (filename: string) => `/images/${filename}`;
 
 const Picture = ({ media }: { media: Media }) => (
   <CardMedia style={{ height: "min(300px, 50vw)" }}>
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
-      <picture>
-        {media.webp && <source srcSet={source(media.webp)} type="image/webp" />}
-        {media.jpg && <source srcSet={source(media.jpg)} type="image/jpeg" />}
-        {media.png && <source srcSet={source(media.png)} type="image/png" />}
-        {media.jpg && (
-          <Image
-            src={source(media.jpg)}
-            alt={media.alt}
-            layout="fill"
-            objectFit="cover"
-          />
-        )}
-        {media.png && (
-          <Image
-            src={source(media.png)}
-            alt={media.alt}
-            layout="fill"
-            objectFit="cover"
-          />
-        )}
-      </picture>
-    </div>
+    <picture>
+      {media.webp && <source srcSet={source(media.webp)} type="image/webp" />}
+      {media.jpg && <source srcSet={source(media.jpg)} type="image/jpeg" />}
+      {media.png && <source srcSet={source(media.png)} type="image/png" />}
+      {media.jpg && (
+        <img
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          src={source(media.jpg)}
+          alt={media.alt}
+        />
+      )}
+      {media.png && (
+        <img
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          src={source(media.png)}
+          alt={media.alt}
+        />
+      )}
+    </picture>
   </CardMedia>
 );
 
