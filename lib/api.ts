@@ -4,6 +4,8 @@ import matter from "gray-matter";
 
 import { ArticleData, Link } from "../types/ArticleData";
 
+import { markdownToText } from "./markdown";
+
 export const getMarkdownFile = (filename: string) => {
   const filepath = path.join(process.cwd(), "contents", `${filename}.md`);
   const { content } = matter.read(filepath);
@@ -18,7 +20,7 @@ export const getPosts = () => {
   return posts;
 };
 
-export const blogSummary = () => {
+export const blogSummary = async () => {
   const dirPath = path.join(process.cwd(), "contents", "posts");
   const files = fs.readdirSync(dirPath);
   const posts = files
@@ -43,7 +45,17 @@ export const blogSummary = () => {
       };
       return article;
     });
-  return posts;
+  return await Promise.all(posts.map(async (post) => {
+    const text = await markdownToText(post.sentence.text || "");
+    const newPost: ArticleData = {
+      title: post.title,
+      sentence: {
+        text: text,
+        links: post.sentence.links,
+      },
+    };
+    return newPost;
+  });
 };
 
 export const getBlog = (fileName: string) => {
