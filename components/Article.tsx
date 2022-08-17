@@ -25,6 +25,7 @@ const Picture = ({ media }: { media: Media }) => (
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
           src={source(media.jpg)}
           alt={media.alt}
+          loading="lazy"
         />
       )}
       {media.png && (
@@ -32,6 +33,7 @@ const Picture = ({ media }: { media: Media }) => (
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
           src={source(media.png)}
           alt={media.alt}
+          loading="lazy"
         />
       )}
     </picture>
