@@ -129,7 +129,7 @@
     {
       "media": {
         "webp": "dtnsim.webp",
-        "jpg": "dtnsim.jpg",
+        "png": "dtnsim.png",
         "alt": "ネットワークシミュレータ"
       },
       "title": "DTNシミュレータ",
