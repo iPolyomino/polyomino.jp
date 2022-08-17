@@ -1,5 +1,5 @@
 import path from "path";
-import fs from "fs";
+import fs, { promises as fsp } from "fs";
 import matter from "gray-matter";
 
 import { ArticleData, Link } from "../types/ArticleData";
@@ -20,42 +20,37 @@ export const getPosts = () => {
   return posts;
 };
 
+const fileToArticle = async (dirPath: string, fileName: string) => {
+  const fileContent = await fsp.readFile(path.join(dirPath, fileName), "utf-8");
+
+  const { data, content } = matter(fileContent);
+  const link: Link = {
+    name: "記事ページへ",
+    url: `/blog/${fileName.replace(/\.md$/, "")}`,
+  };
+
+  const text = await markdownToText(content);
+
+  const article: ArticleData = {
+    title: data.title,
+    sentence: {
+      text: text.substring(0, 700),
+      links: [link],
+    },
+  };
+  return article;
+};
+
 export const blogSummary = async () => {
   const dirPath = path.join(process.cwd(), "contents", "posts");
-  const files = fs.readdirSync(dirPath);
-  const posts = files
-    .sort()
-    .reverse()
-    .map((fileName) => {
-      const fileContent = fs.readFileSync(
-        path.join(dirPath, fileName),
-        "utf-8"
-      );
-      const { data, content } = matter(fileContent);
-      const link: Link = {
-        name: "記事ページへ",
-        url: `/blog/${fileName.replace(/\.md$/, "")}`,
-      };
-      const article: ArticleData = {
-        title: data.title,
-        sentence: {
-          text: content.substring(0, 700),
-          links: [link],
-        },
-      };
-      return article;
-    });
-  return await Promise.all(posts.map(async (post) => {
-    const text = await markdownToText(post.sentence.text || "");
-    const newPost: ArticleData = {
-      title: post.title,
-      sentence: {
-        text: text,
-        links: post.sentence.links,
-      },
-    };
-    return newPost;
-  });
+  const files = await fsp.readdir(dirPath);
+  const sortedFiles = files.sort().reverse();
+  const asyncArticles = sortedFiles.map(async (fileName) =>
+    fileToArticle(dirPath, fileName)
+  );
+  const articles = await Promise.all(asyncArticles);
+
+  return articles;
 };
 
 export const getBlog = (fileName: string) => {
