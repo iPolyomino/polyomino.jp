@@ -1,5 +1,5 @@
 import path from "path";
-import fs, { promises as fsp } from "fs";
+import { promises as fsp } from "fs";
 import matter from "gray-matter";
 
 import { ArticleData, Link } from "../types/ArticleData";
@@ -13,9 +13,9 @@ export const getMarkdownFile = (filename: string) => {
   return content;
 };
 
-export const getPosts = () => {
+export const getPosts = async () => {
   const dirPath = path.join(process.cwd(), "contents", "posts");
-  const files = fs.readdirSync(dirPath);
+  const files = await fsp.readdir(dirPath);
   const posts = files.map((filename) => filename.replace(/\.md$/, ""));
   return posts;
 };

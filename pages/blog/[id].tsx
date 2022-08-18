@@ -26,7 +26,8 @@ export const getStaticProps = async (content: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getPosts().map((fileName) => {
+  const posts = await getPosts();
+  const paths = posts.map((fileName) => {
     return {
       params: {
         id: fileName,
