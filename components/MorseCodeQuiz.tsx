@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -30,6 +30,11 @@ const MorseCodeQuiz = () => {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [code, setCode] = useState<string>("");
   const [threshold, setThreshold] = useState(150);
+
+  useEffect(() => {
+    // ランダムに選択されたクイズから始める
+    setIndex(Math.floor(Math.random() * morse.length));
+  }, []);
 
   const color = () => {
     if (isCorrect === null) return styles.answer;
@@ -68,7 +73,12 @@ const MorseCodeQuiz = () => {
       return;
     }
     clearCode();
-    setIndex(Math.floor(Math.random() * morse.length));
+    let nextIndex = Math.floor(Math.random() * morse.length);
+    // 違うクイズが出るまで問題を選ぶ
+    while (nextIndex === index) {
+      nextIndex = Math.floor(Math.random() * morse.length);
+    }
+    setIndex(nextIndex);
   };
 
   return (
