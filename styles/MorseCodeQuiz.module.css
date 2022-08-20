@@ -27,7 +27,6 @@
 }
 
 .code_button {
-  display: flex;
   width: 2rem;
   height: 2rem;
   justify-content: center;
