@@ -148,30 +148,41 @@ const MorseCodeQuiz = () => {
             <span className={styles.code_button}>{DahSvg()}</span>
           </Button>
           <div className={styles.spacer}></div>
-          <div className={styles.code_result}>
+          <Box
+            className={styles.code_result}
+            sx={{ display: { xs: "none", sm: "flex" } }}
+          >
             {isCorrect === null ? "" : isCorrect ? "正解" : "不正解"}
-          </div>
+          </Box>
           <Button size="large" variant="contained" onClick={answer}>
             OK
           </Button>
         </Box>
-        <p>
-          <kbd>Space</kbd> キーでモールス信号を入力することができます。
-        </p>
-        <p>
-          <kbd>Enter</kbd> キーで入力終了
-        </p>
-        <p>
-          <kbd>Backspace</kbd> キーで入力削除
-        </p>
-        <TextField
-          label="threshold [ms]"
-          type="number"
-          margin="normal"
-          fullWidth
-          value={threshold}
-          onChange={(e) => setThreshold(+e.target.value)}
-        />
+        <Box
+          className={styles.code_result}
+          sx={{ display: { xs: "block", sm: "none" } }}
+        >
+          {isCorrect === null ? "" : isCorrect ? "正解" : "不正解"}
+        </Box>
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <p>
+            <kbd>Space</kbd> キーでモールス信号を入力することができます。
+          </p>
+          <p>
+            <kbd>Enter</kbd> キーで入力終了
+          </p>
+          <p>
+            <kbd>Backspace</kbd> キーで入力削除
+          </p>
+          <TextField
+            label="threshold [ms]"
+            type="number"
+            margin="normal"
+            fullWidth
+            value={threshold}
+            onChange={(e) => setThreshold(+e.target.value)}
+          />
+        </Box>
       </CenterrizedHorizontalGrid>
     </ContentsCard>
   );

@@ -22,8 +22,8 @@
 .code_result {
   font-size: 1.5rem;
   font-weight: bold;
-  display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .code_button {
