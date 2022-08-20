@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
+import NoSsr from "@mui/material/NoSsr";
 
 import NavigationBar from "../../components/NavigationBar";
 import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
@@ -18,7 +19,9 @@ const Quiz: NextPage = () => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
-            <MorseCodeQuiez />
+            <NoSsr>
+              <MorseCodeQuiez />
+            </NoSsr>
           </Grid>
         </Grid>
       </CenterrizedHorizontalGrid>

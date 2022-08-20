@@ -1322,6 +1322,11 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
   integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
 
+"@react-hook/event@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@react-hook/event/-/event-1.2.6.tgz#52f91578add934acc1203328ca09ab14fc7ee58e"
+  integrity sha512-JUL5IluaOdn5w5Afpe/puPa1rj8X6udMlQ9dt4hvMuKmTrBS1Ya6sb4sVgvfe2eU4yDuOfAhik8xhbcCekbg9Q==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"

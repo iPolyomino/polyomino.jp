@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
+    "@react-hook/event": "^1.2.6",
     "babel-plugin-superjson-next": "^0.4.4",
     "d3-voronoi": "^1.1.4",
     "gray-matter": "^4.0.3",

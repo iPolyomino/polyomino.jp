@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useEvent from "@react-hook/event";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -12,13 +13,13 @@ import styles from "../styles/MorseCodeQuiz.module.css";
 import { default as morse } from "../contents/morse.json";
 
 const MorseCodeQuiz = () => {
-  const DitSvg = (
-    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  const DitSvg = (key: number = 0) => (
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" key={key}>
       <circle cx="10" cy="10" r="8" fill="black" />
     </svg>
   );
-  const DahSvg = (
-    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  const DahSvg = (key: number = 0) => (
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" key={key}>
       <line x1="0" y1="10" x2="20" y2="10" stroke="black" strokeWidth="4" />
     </svg>
   );
@@ -27,9 +28,36 @@ const MorseCodeQuiz = () => {
   const dah = "-";
 
   const [index, setIndex] = useState(0);
+  const [downTime, setDownTime] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [code, setCode] = useState<string>("");
   const [threshold, setThreshold] = useState(150);
+
+  useEvent(window, "keydown", (event: any) => {
+    if (event.key === "Backspace" && isCorrect === null) {
+      clearCode();
+    }
+    if (event.key === "Enter") {
+      answer();
+    }
+    // Space bar
+    if (event.key === " " && downTime === null) {
+      const now = Date.now();
+      setDownTime(now);
+    }
+  });
+  useEvent(window, "keyup", (event: any) => {
+    if (event.key !== " " || isCorrect !== null || downTime === null) {
+      return;
+    }
+    const plessTime = Date.now() - downTime;
+    setDownTime(null);
+    if (plessTime < threshold) {
+      ditClick();
+    } else {
+      dahClick();
+    }
+  });
 
   useEffect(() => {
     // ランダムに選択されたクイズから始める
@@ -55,11 +83,11 @@ const MorseCodeQuiz = () => {
   };
 
   const encode = (code: string) => {
-    return code.split("").map((character) => {
+    return code.split("").map((character, i) => {
       if (character === ".") {
-        return DitSvg;
+        return DitSvg(i);
       } else if (character === "-") {
-        return DahSvg;
+        return DahSvg(i);
       }
       throw new Error(`The code "${code}" cannot encoded.`);
     });
@@ -98,7 +126,7 @@ const MorseCodeQuiz = () => {
               color="error"
               disabled={isCorrect !== null}
             >
-              HH
+              <span style={{ textDecoration: "overline" }}>HH</span>
             </Button>
           </Grid>
         </Grid>
@@ -109,7 +137,7 @@ const MorseCodeQuiz = () => {
             onClick={ditClick}
             disabled={isCorrect !== null}
           >
-            <span className={styles.code_button}>{DitSvg}</span>
+            <span className={styles.code_button}>{DitSvg()}</span>
           </Button>
           <Button
             size="large"
@@ -117,7 +145,7 @@ const MorseCodeQuiz = () => {
             onClick={dahClick}
             disabled={isCorrect !== null}
           >
-            <span className={styles.code_button}>{DahSvg}</span>
+            <span className={styles.code_button}>{DahSvg()}</span>
           </Button>
           <div className={styles.spacer}></div>
           <div className={styles.code_result}>
