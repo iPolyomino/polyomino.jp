@@ -41,7 +41,7 @@ const Picture = ({ media }: { media: Media }) => (
 );
 
 const Links = ({ link }: { link: Link }) => (
-  <Button href={link.url} size="small">
+  <Button href={link.url} variant="outlined">
     {link.name}
   </Button>
 );
