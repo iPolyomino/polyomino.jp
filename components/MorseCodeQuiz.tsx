@@ -12,19 +12,27 @@ import styles from "../styles/MorseCodeQuiz.module.css";
 import { default as morse } from "../contents/morse.json";
 
 const MorseCodeQuiz = () => {
-  const dit =
-    '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8" fill="black" /></svg>';
-  const dah =
-    '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="10" x2="20" y2="10" stroke="black" stroke-width="4"/></svg>';
+  const DitSvg = (
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10" cy="10" r="8" fill="black" />
+    </svg>
+  );
+  const DahSvg = (
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="10" x2="20" y2="10" stroke="black" strokeWidth="4" />
+    </svg>
+  );
+
+  const dit = ".";
+  const dah = "-";
 
   const [index, setIndex] = useState(0);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState<string>("");
   const [threshold, setThreshold] = useState(150);
 
   const color = () => {
     if (isCorrect === null) return styles.answer;
-
     return isCorrect ? styles.blue : styles.red;
   };
 
@@ -42,14 +50,21 @@ const MorseCodeQuiz = () => {
   };
 
   const encode = (code: string) => {
-    return code.replace(/\./g, dit).replace(/-/g, dah);
+    return code.split("").map((character) => {
+      if (character === ".") {
+        return DitSvg;
+      } else if (character === "-") {
+        return DahSvg;
+      }
+      throw new Error(`The code "${code}" cannot encoded.`);
+    });
   };
 
   const answer = () => {
     if (isCorrect === null) {
-      const encodeMorse = encode(morse[index].code);
-      setIsCorrect(code === encodeMorse);
-      setCode(encodeMorse);
+      const answerCode = morse[index].code;
+      setIsCorrect(code === answerCode);
+      setCode(answerCode);
       return;
     }
     clearCode();
@@ -64,10 +79,7 @@ const MorseCodeQuiz = () => {
         <Grid container spacing={1} className={color()}>
           <Grid item xs={9}>
             <Box className={styles.code_box}>
-              <span
-                dangerouslySetInnerHTML={{ __html: code }}
-                className={styles.code}
-              ></span>
+              <span className={styles.code}>{encode(code)}</span>
             </Box>
           </Grid>
           <Grid item xs={3} my={3}>
@@ -87,10 +99,7 @@ const MorseCodeQuiz = () => {
             onClick={ditClick}
             disabled={isCorrect !== null}
           >
-            <span
-              dangerouslySetInnerHTML={{ __html: dit }}
-              className={styles.code_button}
-            ></span>
+            <span className={styles.code_button}>{DitSvg}</span>
           </Button>
           <Button
             size="large"
@@ -98,10 +107,7 @@ const MorseCodeQuiz = () => {
             onClick={dahClick}
             disabled={isCorrect !== null}
           >
-            <span
-              dangerouslySetInnerHTML={{ __html: dah }}
-              className={styles.code_button}
-            ></span>
+            <span className={styles.code_button}>{DahSvg}</span>
           </Button>
           <div className={styles.spacer}></div>
           <div className={styles.code_result}>
