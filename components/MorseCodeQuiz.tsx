@@ -64,9 +64,19 @@ const MorseCodeQuiz = () => {
     setIndex(Math.floor(Math.random() * morse.length));
   }, []);
 
+  useEffect(() => {
+    if (isHH(code)) {
+      clearCode();
+    }
+  }, [code]);
+
   const color = () => {
     if (isCorrect === null) return styles.answer;
     return isCorrect ? styles.blue : styles.red;
+  };
+
+  const isHH = (code: string) => {
+    return code.slice(-8) === ".".repeat(8);
   };
 
   const clearCode = () => {
@@ -94,12 +104,15 @@ const MorseCodeQuiz = () => {
   };
 
   const answer = () => {
+    // 正誤判定
     if (isCorrect === null) {
       const answerCode = morse[index].code;
       setIsCorrect(code === answerCode);
       setCode(answerCode);
       return;
     }
+
+    // 新しい問題を出す。
     clearCode();
     let nextIndex = Math.floor(Math.random() * morse.length);
     // 違うクイズが出るまで問題を選ぶ
