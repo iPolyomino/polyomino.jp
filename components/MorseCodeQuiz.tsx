@@ -33,7 +33,7 @@ const MorseCodeQuiz = () => {
   const [code, setCode] = useState<string>("");
   const [threshold, setThreshold] = useState(150);
 
-  useEvent(window, "keydown", (event: any) => {
+  useEvent(window, "keydown", (event: KeyboardEvent) => {
     if (event.key === "Backspace" && isCorrect === null) {
       clearCode();
     }
@@ -46,7 +46,7 @@ const MorseCodeQuiz = () => {
       setDownTime(now);
     }
   });
-  useEvent(window, "keyup", (event: any) => {
+  useEvent(window, "keyup", (event: KeyboardEvent) => {
     if (event.key !== " " || isCorrect !== null || downTime === null) {
       return;
     }
@@ -126,7 +126,7 @@ const MorseCodeQuiz = () => {
               color="error"
               disabled={isCorrect !== null}
             >
-              <span style={{ textDecoration: "overline" }}>HH</span>
+              <span className={styles.reset}>HH</span>
             </Button>
           </Grid>
         </Grid>
