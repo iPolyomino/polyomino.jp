@@ -4,21 +4,21 @@ import Grid from "@mui/material/Grid";
 
 import NavigationBar from "../../components/NavigationBar";
 import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import Footer from "../../components/Footer";
+import MorseCodeQuiez from "../../components/MorseCodeQuiz";
 
 const Quiz: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Hagi - Blog</title>
-        <meta name="description" content="Hagi's portfolio website." />
+        <title>Morse code quiz</title>
+        <meta name="description" content="Morse code quiz" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
-            <Footer />
+            <MorseCodeQuiez />
           </Grid>
         </Grid>
       </CenterrizedHorizontalGrid>
