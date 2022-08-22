@@ -15,7 +15,9 @@ const BlogPage = (props: Props) => {
       <h1>{data.title}</h1>
       <time>{data.date}</time>
       <article dangerouslySetInnerHTML={{ __html: html }}></article>
-      <Button href={"/blog"}>記事一覧ページへ</Button>
+      <Button href={"/blog"} variant="outlined">
+        記事一覧ページへ
+      </Button>
     </ContentsCard>
   );
 };

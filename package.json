@@ -10,15 +10,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/styled": "^11.9.3",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.8.7",
+    "@mui/material": "^5.10.1",
     "@react-hook/event": "^1.2.6",
     "babel-plugin-superjson-next": "^0.4.4",
     "d3-voronoi": "^1.1.4",
     "gray-matter": "^4.0.3",
-    "next": "12.2.0",
+    "next": "12.2.5",
     "next-pwa": "^5.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,11 +29,11 @@
     "superjson": "^1.9.1"
   },
   "devDependencies": {
-    "@types/node": "18.0.3",
-    "@types/react": "18.0.15",
+    "@types/node": "18.7.8",
+    "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^8.5.0",
     "typescript": "4.7.4"
   }
