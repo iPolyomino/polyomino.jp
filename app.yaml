@@ -3,11 +3,3 @@ env: standard
 service: default
 
 instance_class: F2
-
-handlers:
-  - url: /sw.js
-    static_files: .next/sw.js
-    upload: .next/sw.js
-
-  - url: .*
-    script: auto

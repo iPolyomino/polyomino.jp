@@ -19,7 +19,7 @@
     "d3-voronoi": "^1.1.4",
     "gray-matter": "^4.0.3",
     "next": "12.2.5",
-    "next-pwa": "^5.5.5",
+    "next-pwa": "5.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
