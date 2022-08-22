@@ -67,7 +67,7 @@ const NavigationBar = () => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#9e9e9e",
+        main: "#555",
       },
     },
   });
