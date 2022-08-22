@@ -77,11 +77,7 @@ const NavigationBar = () => {
       <ThemeProvider theme={darkTheme}>
         <AppBar component="nav" position="fixed" style={{ color: "white" }}>
           <Toolbar>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ ml: 2, flexGrow: 1 }}
-            >
+            <Typography variant="h5" sx={{ ml: 2, flexGrow: 1 }}>
               <Link href="/" passHref>
                 polyomino.jp
               </Link>
@@ -110,9 +106,8 @@ const NavigationBar = () => {
           </Toolbar>
         </AppBar>
         <Toolbar />
-        <Box component="nav">
+        <Box>
           <SwipeableDrawer
-            variant="temporary"
             anchor="right"
             open={mobileOpen}
             onOpen={toggleDrawer(true)}

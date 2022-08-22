@@ -26,6 +26,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Hagi's portfolio website." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1 style={{ display: "none" }}>Hagi</h1>
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container justifyContent="center" alignItems="center">

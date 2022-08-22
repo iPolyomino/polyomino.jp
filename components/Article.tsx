@@ -54,7 +54,7 @@ const Article = (props: Props) => {
       <article>
         {data.media && <Picture media={data.media} />}
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5">
             {data.title}
           </Typography>
           <Typography variant="body1" color="text.secondary">
