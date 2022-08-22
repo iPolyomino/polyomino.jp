@@ -2,6 +2,69 @@
   "articles": [
     {
       "media": {
+        "webp": "oz.webp",
+        "jpg": "oz.jpg",
+        "alt": "2005年を彷彿とさせるチャットアプリケーションのスクリーンショット"
+      },
+      "title": "ログインできそうな画面",
+      "sentence": {
+        "text": "どこかでログインフォームとして使われていそうな画面を *CSSとHTMLのみ* で実装しました。ニックネームとパスワードの入力欄に適当な文字を入れ、Enter キーを入力するとアニメーションが始まります。",
+        "links": [
+          {
+            "name": "OZ",
+            "url": "https://oz.polyomino.jp"
+          },
+          {
+            "name": "GitHub",
+            "url": "https://github.com/ipolyomino/oz"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "eva_timer.webp",
+        "png": "eva_timer.png",
+        "alt": "エヴァンゲリオンの活動限界を示すタイマー風のストップウォッチウェブサイトのスクリーンショット"
+      },
+      "title": "EVA-TIMER",
+      "sentence": {
+        "text": "活動限界を示すために用いられていそうなタイマーです。画像は一切用いず、CSS により作られています。タイマー機能を実現するためのところのみ JavaScript を用いて実装しています。",
+        "links": [
+          {
+            "name": "TIMER",
+            "url": "https://timer.polyomino.jp/"
+          },
+          {
+            "name": "GitHub",
+            "url": "https://github.com/iPolyomino/EVA-TIMER"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "voyage.webp",
+        "png": "voyage.png",
+        "alt": "航海する船のアニメ調の画像。ウェブサイトのスクリーンショット"
+      },
+      "title": "voyage",
+      "sentence": {
+        "text": "2018年 8月、VOYAGE GROUP という会社でインターンをしました。右上に終了日からの経過日数が表示されます。CSS アニメーションにより、船が航海している様子を表しています。",
+        "links": [
+          {
+            "name": "voyage",
+            "url": "https://voyage.polyomino.jp/"
+          },
+          {
+            "name": "GitHub",
+            "url": "https://github.com/iPolyomino/voyage"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
         "webp": "chat.webp",
         "png": "chat.png",
         "alt": "2005年を彷彿とさせるチャットアプリケーションのスクリーンショット"
@@ -69,59 +132,17 @@
     },
     {
       "media": {
-        "webp": "eva_timer.webp",
-        "png": "eva_timer.png",
-        "alt": "エヴァンゲリオンの活動限界を示すタイマー風のストップウォッチウェブサイトのスクリーンショット"
+        "webp": "morse_code.webp",
+        "png": "morse_code.png",
+        "alt": "モールス信号を入力するクイズウェブサイトのスクリーンショット"
       },
-      "title": "EVA-TIMER",
+      "title": "モールス信号クイズ",
       "sentence": {
-        "text": "タイマーです。画像は一切用いず、CSS により作られています。",
+        "text": "モールス信号の暗記をするために作成したページです。スペースキーで、モールス信号を打っている感覚で入力することができます。モールス信号の訂正にあたる、HH (短点 8 つ) を入力すると…?",
         "links": [
           {
-            "name": "TIMER",
-            "url": "https://timer.polyomino.jp/"
-          },
-          {
-            "name": "GitHub",
-            "url": "https://github.com/iPolyomino/EVA-TIMER"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "voyage.webp",
-        "png": "voyage.png",
-        "alt": "航海する船のアニメ調の画像。ウェブサイトのスクリーンショット"
-      },
-      "title": "voyage",
-      "sentence": {
-        "text": "2018年 8月、VOYAGE GROUP という会社でインターンをしました。右上に終了日からの経過日数が表示されます。",
-        "links": [
-          {
-            "name": "voyage",
-            "url": "https://voyage.polyomino.jp/"
-          },
-          {
-            "name": "GitHub",
-            "url": "https://github.com/iPolyomino/voyage"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "lsnl.webp",
-        "png": "lsnl.png",
-        "alt": "ネットワーク研究室Webサイトのスクリーンショット"
-      },
-      "title": "Network Architecture Laboratory",
-      "sentence": {
-        "text": "私が研究室で先生から教えてもらったことをまとめています。研究に関係することのみならず、生き方や考え方、議論のしかたまで多岐にわたります。",
-        "links": [
-          {
-            "name": "lsnl",
-            "url": "https://lsnl.polyomino.jp/"
+            "name": "モールス信号クイズ",
+            "url": "/morse/quiz"
           }
         ]
       }
@@ -139,6 +160,23 @@
           {
             "name": "DTNシミュレータ",
             "url": "/dtnsim"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "lsnl.webp",
+        "png": "lsnl.png",
+        "alt": "ネットワーク研究室Webサイトのスクリーンショット"
+      },
+      "title": "Network Architecture Laboratory",
+      "sentence": {
+        "text": "私が研究室で先生から教えてもらったことをまとめています。研究に関係することのみならず、生き方や考え方、議論のしかたまで多岐にわたります。",
+        "links": [
+          {
+            "name": "lsnl",
+            "url": "https://lsnl.polyomino.jp/"
           }
         ]
       }
