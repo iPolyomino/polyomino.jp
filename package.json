@@ -7,7 +7,7 @@
     "build": "next build",
     "gcp-build": "yarn build",
     "start": "next start -p ${PORT:-8080}",
-    "lint": "next lint"
+    "lint": "next lint --ext .ts,.tsx"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",

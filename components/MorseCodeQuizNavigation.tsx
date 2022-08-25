@@ -4,10 +4,10 @@ import TextField from "@mui/material/TextField";
 
 interface Props {
   threshold: number;
-  setThreshold: (threshold: number) => void;
+  setThreshold: () => void;
 }
 
-const MorseCodeQuizNavigation = (props: Props) => {
+const MorseCodeQuizNavigation = ({ threshold, setThreshold }: Props) => {
   return (
     <Box sx={{ display: { xs: "none", sm: "block" } }}>
       <p>
@@ -24,8 +24,8 @@ const MorseCodeQuizNavigation = (props: Props) => {
         type="number"
         margin="normal"
         fullWidth
-        value={props.threshold}
-        onChange={(e) => props.setThreshold(+e.target.value)}
+        value={threshold}
+        onChange={(e) => setThreshold(+e.target.value)}
       />
     </Box>
   );

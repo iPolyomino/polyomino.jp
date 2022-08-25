@@ -8,10 +8,6 @@ import Morse from "@/components/Morse";
 import Footer from "@/components/Footer";
 
 const Index: NextPage = () => {
-  const dit = "&bull;";
-  const dah = "&ndash;";
-  const encode = (code: string) => code.replace(/\./g, dit).replace(/-/g, dah);
-
   return (
     <>
       <Head>
