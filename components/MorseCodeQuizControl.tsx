@@ -11,9 +11,12 @@ interface Props {
   answer: () => void;
 }
 
-const MorseCodeQuizControl = (props: Props) => {
-  const { isCorrect, ditClick, dahClick, answer } = props;
-
+const MorseCodeQuizControl = ({
+  isCorrect,
+  ditClick,
+  dahClick,
+  answer,
+}: Props) => {
   return (
     <>
       <Box className={styles.button_box}>

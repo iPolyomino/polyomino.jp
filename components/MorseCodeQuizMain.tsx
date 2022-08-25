@@ -15,9 +15,7 @@ interface Props {
   clearCode: () => void;
 }
 
-const MorseCodeQuizMain = (props: Props) => {
-  const { isCorrect, index, code, clearCode } = props;
-
+const MorseCodeQuizMain = ({ isCorrect, index, code, clearCode }: Props) => {
   const color = () => {
     if (isCorrect === null) return styles.answer;
     return isCorrect ? styles.blue : styles.red;
