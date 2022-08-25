@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import TRPG from "../../components/TRPG";
-import Footer from "../../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import TRPG from "@/components/TRPG";
+import Footer from "@/components/Footer";
 
 const TrpgDice: NextPage = () => {
   return (

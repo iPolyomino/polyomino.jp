@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import Morse from "../../components/Morse";
-import Footer from "../../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import Morse from "@/components/Morse";
+import Footer from "@/components/Footer";
 
 const Index: NextPage = () => {
   const dit = "&bull;";

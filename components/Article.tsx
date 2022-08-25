@@ -4,9 +4,9 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 
-import ContentsCard from "./ContentsCard";
+import ContentsCard from "@/components/ContentsCard";
 
-import { ArticleData, Media, Link } from "../types/ArticleData";
+import { ArticleData, Media, Link } from "@/types/ArticleData";
 
 interface Props {
   data: ArticleData;

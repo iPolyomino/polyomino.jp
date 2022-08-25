@@ -6,8 +6,8 @@ import React, {
   useState,
 } from "react";
 
-import Main from "../lib/dtnsim/main";
-import { GraphSettings } from "../types/GraphSettings";
+import Main from "@/lib/dtnsim/main";
+import { GraphSettings } from "@/types/GraphSettings";
 
 interface Props {
   settings: GraphSettings;

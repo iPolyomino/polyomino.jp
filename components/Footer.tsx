@@ -1,8 +1,6 @@
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 
-import ContentsCard from "./ContentsCard";
-
 const Footer = () => {
   return (
     <footer>

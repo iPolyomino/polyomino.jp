@@ -6,10 +6,10 @@ import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 
-import ContentsCard from "./ContentsCard";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
+import ContentsCard from "@/components/ContentsCard";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 
-import { default as morse } from "../contents/morse.json";
+import { default as morse } from "@/contents/morse.json";
 
 const Morse = () => {
   const dit = "&bull;";

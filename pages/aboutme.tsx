@@ -2,16 +2,16 @@ import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
-import Article from "../components/Article";
-import RawArticle from "../components/RawArticle";
-import Footer from "../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import Article from "@/components/Article";
+import RawArticle from "@/components/RawArticle";
+import Footer from "@/components/Footer";
 
-import { getMarkdownFile } from "../lib/api";
-import { markdownToHTML } from "../lib/markdown";
+import { getMarkdownFile } from "@/lib/api";
+import { markdownToHTML } from "@/lib/markdown";
 
-import { default as aboutmeJson } from "../contents/aboutme.json";
+import { default as aboutmeJson } from "@/contents/aboutme.json";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

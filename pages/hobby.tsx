@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
-import Ham from "../components/Ham";
-import ElectronicWork from "../components/ElectronicWork";
-import Footer from "../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import Ham from "@/components/Ham";
+import ElectronicWork from "@/components/ElectronicWork";
+import Footer from "@/components/Footer";
 
 const Hobby: NextPage = () => {
   return (

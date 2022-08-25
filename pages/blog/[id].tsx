@@ -3,13 +3,13 @@ import { GetStaticPropsContext } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
-import NavigationBar from "../../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import BlogPage from "../../components/BlogPage";
-import Footer from "../../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import BlogPage from "@/components/BlogPage";
+import Footer from "@/components/Footer";
 
-import { getPosts, getBlog } from "../../lib/api";
-import { markdownToHTML } from "../../lib/markdown";
+import { getPosts, getBlog } from "@/lib/api";
+import { markdownToHTML } from "@/lib/markdown";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

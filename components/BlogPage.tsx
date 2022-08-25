@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 
-import ContentsCard from "./ContentsCard";
+import ContentsCard from "@/components/ContentsCard";
 
 interface Props {
   data: { title: string; date: string };

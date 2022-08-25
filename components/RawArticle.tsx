@@ -1,4 +1,4 @@
-import ContentsCard from "./ContentsCard";
+import ContentsCard from "@/components/ContentsCard";
 
 interface Props {
   html: string;

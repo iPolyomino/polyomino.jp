@@ -2,9 +2,9 @@ import path from "path";
 import { promises as fsp } from "fs";
 import matter from "gray-matter";
 
-import { ArticleData, Link } from "../types/ArticleData";
+import { ArticleData, Link } from "@/types/ArticleData";
 
-import { markdownToText } from "./markdown";
+import { markdownToText } from "@/lib/markdown";
 
 export const getMarkdownFile = (filename: string) => {
   const filepath = path.join(process.cwd(), "contents", `${filename}.md`);

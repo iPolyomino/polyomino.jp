@@ -3,17 +3,17 @@ import Head from "next/head";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-import NavigationBar from "../components/NavigationBar";
-import Hagi from "../components/Hagi";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
-import Article from "../components/Article";
-import Footer from "../components/Footer";
+import NavigationBar from "@/components/NavigationBar";
+import Hagi from "@/components/Hagi";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import Article from "@/components/Article";
+import Footer from "@/components/Footer";
 
-import { ArticleData } from "../types/ArticleData";
+import { ArticleData } from "@/types/ArticleData";
 
-import { default as aboutmeJson } from "../contents/aboutme.json";
-import { default as articlesJson } from "../contents/article.json";
-import { default as appendixJson } from "../contents/appendix.json";
+import { default as aboutmeJson } from "@/contents/aboutme.json";
+import { default as articlesJson } from "@/contents/article.json";
+import { default as appendixJson } from "@/contents/appendix.json";
 
 const Home: NextPage = () => {
   const { aboutme } = aboutmeJson;

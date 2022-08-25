@@ -1,7 +1,7 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
-import Background from "../components/Background";
+import Background from "@/components/Background";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

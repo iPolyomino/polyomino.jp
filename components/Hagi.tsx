@@ -1,6 +1,6 @@
 import Card from "@mui/material/Card";
 
-import styles from "../styles/Hagi.module.css";
+import styles from "@/styles/Hagi.module.css";
 
 const Hagi = () => {
   return (

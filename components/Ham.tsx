@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import ContentsCard from "./ContentsCard";
+import ContentsCard from "@/components/ContentsCard";
 
 const Ham = () => {
   return (

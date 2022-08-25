@@ -3,9 +3,9 @@ import Head from "next/head";
 import Grid from "@mui/material/Grid";
 import NoSsr from "@mui/material/NoSsr";
 
-import NavigationBar from "../../components/NavigationBar";
-import CenterrizedHorizontalGrid from "../../components/CenterrizedHorizontalGrid";
-import MorseCodeQuiez from "../../components/MorseCodeQuiz";
+import NavigationBar from "@/components/NavigationBar";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import MorseCodeQuiez from "@/components/MorseCodeQuiz";
 
 const Quiz: NextPage = () => {
   return (

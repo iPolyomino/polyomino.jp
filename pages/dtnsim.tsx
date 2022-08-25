@@ -6,12 +6,12 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import NavigationBar from "../components/NavigationBar";
-import DTN from "../components/DTN";
-import ContentsCard from "../components/ContentsCard";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
+import NavigationBar from "@/components/NavigationBar";
+import DTN from "@/components/DTN";
+import ContentsCard from "@/components/ContentsCard";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 
-import { GraphSettings } from "../types/GraphSettings";
+import { GraphSettings } from "@/types/GraphSettings";
 
 const DtnSimulator: NextPage = () => {
   const defaultSettings = { node: 20, agent: 10, range: 40 };

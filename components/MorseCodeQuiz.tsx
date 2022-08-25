@@ -6,11 +6,11 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
-import ContentsCard from "./ContentsCard";
-import CenterrizedHorizontalGrid from "../components/CenterrizedHorizontalGrid";
-import styles from "../styles/MorseCodeQuiz.module.css";
+import ContentsCard from "@/components/ContentsCard";
+import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
+import styles from "@/styles/MorseCodeQuiz.module.css";
 
-import { default as morse } from "../contents/morse.json";
+import { default as morse } from "@/contents/morse.json";
 
 const MorseCodeQuiz = () => {
   const DitSvg = (key: number = 0) => (
