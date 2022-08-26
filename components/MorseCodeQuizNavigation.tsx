@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 
 interface Props {
   threshold: number;
-  setThreshold: () => void;
+  setThreshold: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const MorseCodeQuizNavigation = ({ threshold, setThreshold }: Props) => {
