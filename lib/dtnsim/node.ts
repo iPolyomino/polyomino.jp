@@ -1,5 +1,16 @@
 export default class Node {
-  constructor(context, coordinate, id) {
+  size: number;
+  color: string;
+  context: CanvasRenderingContext2D | null;
+  coordinate: number[];
+  id: string | number;
+  connectedNode: Node[];
+
+  constructor(
+    context: CanvasRenderingContext2D | null,
+    coordinate: number[],
+    id: string | number
+  ) {
     if (coordinate.length != 2) {
       throw new Error("coordinate should set as [x, y]");
     }
@@ -10,16 +21,19 @@ export default class Node {
     this.id = id;
     this.connectedNode = [];
   }
-  appendConnectedNode(node) {
+  appendConnectedNode(node: Node) {
     if (node.id === this.id) {
       throw new Error("cannot append self node.");
     }
     this.connectedNode.push(node);
   }
-  isEqual(node) {
+  isEqual(node: Node) {
     return node.id === this.id;
   }
   draw() {
+    if (this.context == null) {
+      throw new Error("context is not defined");
+    }
     this.context.beginPath();
     this.context.fillStyle = this.color;
     this.context.arc(
