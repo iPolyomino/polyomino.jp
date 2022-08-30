@@ -1,19 +1,14 @@
+import { SimulatorCanvas, Coordinate } from "@/types/Simulator";
+
 export default class Node {
   size: number;
   color: string;
-  context: CanvasRenderingContext2D | null;
-  coordinate: number[];
-  id: string | number;
+  context: SimulatorCanvas;
+  coordinate: Coordinate;
+  id: string;
   connectedNode: Node[];
 
-  constructor(
-    context: CanvasRenderingContext2D | null,
-    coordinate: number[],
-    id: string | number
-  ) {
-    if (coordinate.length != 2) {
-      throw new Error("coordinate should set as [x, y]");
-    }
+  constructor(context: SimulatorCanvas, coordinate: Coordinate, id: string) {
     this.size = 10;
     this.color = "#555";
     this.context = context;
