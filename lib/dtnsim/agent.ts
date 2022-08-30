@@ -1,7 +1,22 @@
 import { RandomSelect } from "./algorithm";
+import Node from "./node";
+import { SimulatorCanvas, Coordinate } from "@/types/Simulator";
 
 export default class Agent {
-  constructor(context, { range = 40, algorithm = RandomSelect } = {}) {
+  context: SimulatorCanvas;
+  range: number;
+  algorithm: (node: Node) => Node;
+  size: number;
+  coordinate: Coordinate;
+  sourceNode: Node | null;
+  targetNode: Node | null;
+  unitVector: [number, number] | null;
+  isDelivered: boolean;
+
+  constructor(
+    context: SimulatorCanvas,
+    { range = 40, algorithm = RandomSelect } = {}
+  ) {
     this.context = context;
     this.range = range;
     this.algorithm = algorithm;
@@ -12,13 +27,14 @@ export default class Agent {
     this.unitVector = null;
     this.isDelivered = false;
   }
-  initStartNode(startNode) {
+  initStartNode(startNode: Node) {
     this.sourceNode = startNode;
     this.coordinate = startNode.coordinate;
   }
   move() {
     if (this.unitVector === null || this.targetNode === null) {
       this.selectNextNode();
+      return;
     }
 
     // This agent move unit vector every loop.
@@ -41,7 +57,7 @@ export default class Agent {
       this.coordinate[1] + this.unitVector[1],
     ];
 
-    this.coordinate = newCoordinate;
+    this.coordinate = newCoordinate as Coordinate;
     this.draw();
   }
   selectNextNode() {
@@ -52,6 +68,9 @@ export default class Agent {
     this.calcVector();
   }
   calcVector() {
+    if (this.targetNode == null || this.sourceNode == null) {
+      throw new Error("coordinate is undefined");
+    }
     const xDiff = this.targetNode.coordinate[0] - this.sourceNode.coordinate[0];
     const yDiff = this.targetNode.coordinate[1] - this.sourceNode.coordinate[1];
     // |\vec{a}|
@@ -59,6 +78,9 @@ export default class Agent {
     this.unitVector = [xDiff / vecA, yDiff / vecA];
   }
   draw() {
+    if (this.context == null) {
+      throw new Error("context is not defined");
+    }
     // range
     this.context.beginPath();
     this.context.fillStyle = "hsla(200, 70%, 70%, 0.6)";
