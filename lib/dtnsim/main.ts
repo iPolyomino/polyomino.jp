@@ -2,31 +2,37 @@ import Agent from "./agent";
 import Graph from "./graph";
 import Information from "./information";
 import Node from "./node";
+import { SimulatorCanvas, Link } from "@/types/Simulator";
+
+// @ts-ignore
 import { voronoi as d3Voronoi } from "d3-voronoi";
 
 export default class Main {
-  constructor(canvas, { node = 20, agent = 3, range = 10 } = {}) {
+  context: SimulatorCanvas;
+  width: number;
+  height: number;
+  nodes: Node[];
+  links: Link[];
+  graph: Graph;
+  information: Information;
+  agents: Agent[];
+
+  constructor(
+    canvas: CanvasRenderingContext2D,
+    { node = 20, agent = 3, range = 10 } = {}
+  ) {
     if (canvas == null) {
       throw new Error(`canvas: ${canvas}`);
     }
 
-    if (node !== parseInt(node, 10)) {
-      throw new Error(`'node' should be integer`);
-    }
     if (node < 3) {
       throw new Error(`'node' should be more than 3`);
     }
 
-    if (agent !== parseInt(agent, 10)) {
-      throw new Error(`'agent' should be integer`);
-    }
     if (agent < 2) {
       throw new Error(`'agent' should be more than 2`);
     }
 
-    if (range !== parseInt(range, 10)) {
-      throw new Error(`'range' should be integer`);
-    }
     if (range < 10) {
       throw new Error(`'node' should be more than 10`);
     }
@@ -91,6 +97,9 @@ export default class Main {
     this.render();
   }
   render() {
+    if (this.context == null) {
+      throw new Error("context is not defined");
+    }
     // prepare redraw
     this.context.clearRect(0, 0, this.width, this.height);
 
