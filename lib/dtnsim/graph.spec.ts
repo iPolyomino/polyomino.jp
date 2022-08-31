@@ -12,7 +12,7 @@ describe("ring network test", () => {
   const nodes = [...Array(3).keys()].map((key) => {
     const x = key;
     const y = key;
-    return new Node(null, { x, y }, key.toString());
+    return new Node(null, { x, y }, key);
   });
   links.forEach((link) => {
     if (link.source.id == null || link.target.id == null) return;
@@ -33,7 +33,7 @@ describe("error test", () => {
     const nodes = [...Array(1).keys()].map((key) => {
       const x = key;
       const y = key;
-      return new Node(null, { x, y }, key.toString());
+      return new Node(null, { x, y }, key);
     });
 
     expect(() => new Graph(null, 800, 600, nodes, [])).toThrow(
@@ -43,14 +43,12 @@ describe("error test", () => {
 
   test("connectedNode validateion error", () => {
     const links = [
-      { sorce: 0, target: 1 },
-      { sorce: 1, target: 2 },
-      { sorce: 2, target: 0 },
+      { source: { x: 0, y: 0, id: 0 }, target: { x: 1, y: 1, id: 1 } },
+      { source: { x: 1, y: 1, id: 1 }, target: { x: 2, y: 2, id: 2 } },
+      { source: { x: 2, y: 2, id: 2 }, target: { x: 0, y: 0, id: 0 } },
     ];
     const nodes = [...Array(3).keys()].map((key) => {
-      const x = key;
-      const y = key;
-      return new Node(null, { x, y }, key);
+      return new Node(null, { x: key, y: key }, key);
     });
     // don't set connectedNode
 
