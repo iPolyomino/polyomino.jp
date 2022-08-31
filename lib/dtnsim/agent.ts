@@ -10,7 +10,7 @@ export default class Agent {
   coordinate: Coordinate;
   sourceNode: Node | null;
   targetNode: Node | null;
-  unitVector: [number, number] | null;
+  unitVector: Coordinate | null;
   isDelivered: boolean;
 
   constructor(
@@ -21,7 +21,7 @@ export default class Agent {
     this.range = range;
     this.algorithm = algorithm;
     this.size = 10;
-    this.coordinate = [0, 0];
+    this.coordinate = { x: 0, y: 0 };
     this.sourceNode = null;
     this.targetNode = null;
     this.unitVector = null;
@@ -40,9 +40,9 @@ export default class Agent {
     // This agent move unit vector every loop.
     // This algorithm has large amount of calculation.
     const xRemainingCoordinate =
-      this.targetNode.coordinate[0] - this.coordinate[0];
+      this.targetNode.coordinate.x - this.coordinate.x;
     const yRemainingCoordinate =
-      this.targetNode.coordinate[1] - this.coordinate[1];
+      this.targetNode.coordinate.y - this.coordinate.y;
     const distance = Math.sqrt(
       Math.pow(xRemainingCoordinate, 2) + Math.pow(yRemainingCoordinate, 2)
     );
@@ -52,12 +52,11 @@ export default class Agent {
       this.sourceNode = this.targetNode;
       this.selectNextNode();
     }
-    const newCoordinate = [
-      this.coordinate[0] + this.unitVector[0],
-      this.coordinate[1] + this.unitVector[1],
-    ];
 
-    this.coordinate = newCoordinate as Coordinate;
+    this.coordinate = {
+      x: this.coordinate.x + this.unitVector.x,
+      y: this.coordinate.y + this.unitVector.y,
+    };
     this.draw();
   }
   selectNextNode() {
@@ -71,11 +70,11 @@ export default class Agent {
     if (this.targetNode == null || this.sourceNode == null) {
       throw new Error("coordinate is undefined");
     }
-    const xDiff = this.targetNode.coordinate[0] - this.sourceNode.coordinate[0];
-    const yDiff = this.targetNode.coordinate[1] - this.sourceNode.coordinate[1];
+    const xDiff = this.targetNode.coordinate.x - this.sourceNode.coordinate.x;
+    const yDiff = this.targetNode.coordinate.y - this.sourceNode.coordinate.y;
     // |\vec{a}|
     const vecA = Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
-    this.unitVector = [xDiff / vecA, yDiff / vecA];
+    this.unitVector = { x: xDiff / vecA, y: yDiff / vecA };
   }
   draw() {
     if (this.context == null) {
@@ -85,8 +84,8 @@ export default class Agent {
     this.context.beginPath();
     this.context.fillStyle = "hsla(200, 70%, 70%, 0.6)";
     this.context.arc(
-      this.coordinate[0],
-      this.coordinate[1],
+      this.coordinate.x,
+      this.coordinate.y,
       this.range,
       0,
       Math.PI * 2
@@ -100,8 +99,8 @@ export default class Agent {
       this.context.fillStyle = "hsl(230, 100%, 50%)";
     }
     this.context.arc(
-      this.coordinate[0],
-      this.coordinate[1],
+      this.coordinate.x,
+      this.coordinate.y,
       this.size,
       0,
       Math.PI * 2

@@ -21,8 +21,8 @@ export default class Path {
     this.context.beginPath();
     this.context.lineWidth = 5;
     this.context.strokeStyle = "#aaa";
-    this.context.moveTo(this.source[0], this.source[1]);
-    this.context.lineTo(this.target[0], this.target[1]);
+    this.context.moveTo(this.source.x, this.source.y);
+    this.context.lineTo(this.target.x, this.target.y);
     this.context.stroke();
   }
 }

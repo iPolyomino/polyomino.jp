@@ -1,21 +1,23 @@
 import Graph from "./graph";
 import Node from "./node";
 import { describe, expect, test } from "@jest/globals";
+import { Link } from "@/types/Simulator";
 
 describe("ring network test", () => {
-  const links = [
-    { sorce: 0, target: 1 },
-    { sorce: 1, target: 2 },
-    { sorce: 2, target: 0 },
+  const links: Link[] = [
+    { source: { x: 0, y: 0, id: 0 }, target: { x: 1, y: 1, id: 1 } },
+    { source: { x: 1, y: 1, id: 1 }, target: { x: 2, y: 2, id: 2 } },
+    { source: { x: 2, y: 2, id: 2 }, target: { x: 0, y: 0, id: 0 } },
   ];
   const nodes = [...Array(3).keys()].map((key) => {
     const x = key;
     const y = key;
-    return new Node(null, [x, y], key);
+    return new Node(null, { x, y }, key.toString());
   });
   links.forEach((link) => {
-    nodes[link.sorce].appendConnectedNode(nodes[link.target]);
-    nodes[link.target].appendConnectedNode(nodes[link.sorce]);
+    if (link.source.id == null || link.target.id == null) return;
+    nodes[link.source.id].appendConnectedNode(nodes[link.target.id]);
+    nodes[link.target.id].appendConnectedNode(nodes[link.source.id]);
   });
 
   const graph = new Graph(null, 800, 600, nodes, links);
@@ -31,10 +33,10 @@ describe("error test", () => {
     const nodes = [...Array(1).keys()].map((key) => {
       const x = key;
       const y = key;
-      return new Node(null, [x, y], key);
+      return new Node(null, { x, y }, key.toString());
     });
 
-    expect(() => new Graph(null, 800, 600, nodes, null)).toThrow(
+    expect(() => new Graph(null, 800, 600, nodes, [])).toThrow(
       new Error("cannot create graph by single node")
     );
   });
@@ -48,7 +50,7 @@ describe("error test", () => {
     const nodes = [...Array(3).keys()].map((key) => {
       const x = key;
       const y = key;
-      return new Node(null, [x, y], key);
+      return new Node(null, { x, y }, key);
     });
     // don't set connectedNode
 

@@ -2,7 +2,7 @@ import Agent from "./agent";
 import Graph from "./graph";
 import Information from "./information";
 import Node from "./node";
-import { SimulatorCanvas, Link } from "@/types/Simulator";
+import { SimulatorCanvas, Link, VoronoiLink } from "@/types/Simulator";
 
 // @ts-ignore
 import { voronoi as d3Voronoi } from "d3-voronoi";
@@ -46,7 +46,7 @@ export default class Main {
     this.nodes = [...Array(node).keys()].map((key) => {
       const x = Math.random() * this.width;
       const y = Math.random() * this.height;
-      return new Node(this.context, [x, y], key.toString());
+      return new Node(this.context, { x, y }, key);
     });
 
     // init voronoi diagram
@@ -56,24 +56,40 @@ export default class Main {
       [this.width, this.height],
     ]);
     // data = [[x, y, id], ...]
-    const data = this.nodes.map((node) => [...node.coordinate, node.id]);
-    this.links = voronoi(data).links();
+    const data = this.nodes.map((node) => [
+      node.coordinate.x,
+      node.coordinate.y,
+      node.id,
+    ]);
+    const voronoiLink: VoronoiLink[] = voronoi(data).links();
+
+    this.links = voronoiLink.map((link: VoronoiLink) => {
+      return {
+        source: {
+          x: link.source[0],
+          y: link.source[1],
+          id: link.source[2],
+        },
+        target: {
+          x: link.target[0],
+          y: link.target[1],
+          id: link.target[2],
+        },
+      };
+    });
 
     // node connectionNode update
     this.links.forEach((link) => {
-      const sourceId = link.source[2];
-      const targetId = link.target[2];
+      const sourceId = link.source.id;
+      const targetId = link.target.id;
 
       if (sourceId == null || targetId == null) {
         throw new Error();
       }
 
-      const sourceIndex = parseInt(sourceId, 10);
-      const targetIndex = parseInt(targetId, 10);
-
       // append connectedNode to each other
-      this.nodes[sourceIndex].appendConnectedNode(this.nodes[targetIndex]);
-      this.nodes[targetIndex].appendConnectedNode(this.nodes[sourceIndex]);
+      this.nodes[sourceId].appendConnectedNode(this.nodes[targetId]);
+      this.nodes[targetId].appendConnectedNode(this.nodes[sourceId]);
     });
 
     this.graph = new Graph(
@@ -129,8 +145,8 @@ export default class Main {
           continue;
         }
 
-        const xDiff = targetAgent.coordinate[0] - sourceAgent.coordinate[0];
-        const yDiff = targetAgent.coordinate[1] - sourceAgent.coordinate[1];
+        const xDiff = targetAgent.coordinate.x - sourceAgent.coordinate.x;
+        const yDiff = targetAgent.coordinate.y - sourceAgent.coordinate.y;
         const distance = Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
 
         if (distance < sourceAgent.range + targetAgent.size) {

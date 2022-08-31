@@ -10,10 +10,10 @@ describe("agent test", () => {
     expect(agent.isDelivered).toBe(false);
   });
 
-  const node = new Node(null, [10, 20], "exampleId");
+  const node = new Node(null, { x: 10, y: 20 }, 123);
   test("init test", () => {
     agent.initStartNode(node);
-    expect(agent.sourceNode.id).toBe("exampleId");
-    expect(agent.coordinate).toEqual([10, 20]);
+    expect(agent.sourceNode?.id).toBe(123);
+    expect(agent.coordinate).toEqual({ x: 10, y: 20 });
   });
 });

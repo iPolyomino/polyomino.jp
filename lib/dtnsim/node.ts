@@ -5,10 +5,10 @@ export default class Node {
   color: string;
   context: SimulatorCanvas;
   coordinate: Coordinate;
-  id: string;
+  id: number;
   connectedNode: Node[];
 
-  constructor(context: SimulatorCanvas, coordinate: Coordinate, id: string) {
+  constructor(context: SimulatorCanvas, coordinate: Coordinate, id: number) {
     this.size = 10;
     this.color = "#555";
     this.context = context;
@@ -32,8 +32,8 @@ export default class Node {
     this.context.beginPath();
     this.context.fillStyle = this.color;
     this.context.arc(
-      this.coordinate[0],
-      this.coordinate[1],
+      this.coordinate.x,
+      this.coordinate.y,
       this.size,
       0,
       Math.PI * 2
