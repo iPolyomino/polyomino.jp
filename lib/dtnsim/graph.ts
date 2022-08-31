@@ -1,7 +1,21 @@
 import Path from "./path";
+import Node from "./node";
+import { SimulatorCanvas, Link } from "@/types/Simulator";
 
 export default class Graph {
-  constructor(context, width = 800, height = 600, nodes = [], links = []) {
+  context: SimulatorCanvas;
+  width: number;
+  height: number;
+  nodes: Node[];
+  links: Link[];
+
+  constructor(
+    context: SimulatorCanvas,
+    width = 800,
+    height = 600,
+    nodes: Node[],
+    links: Link[]
+  ) {
     if (nodes == null || nodes.length < 2) {
       throw new Error("cannot create graph by single node");
     }
@@ -19,6 +33,9 @@ export default class Graph {
     this.links = links;
   }
   draw() {
+    if (this.context == null) {
+      throw new Error("context is not defined");
+    }
     this.context.fillStyle = "#222";
     this.context.fillRect(0, 0, this.width, this.height);
     this.links.forEach((link) => {
