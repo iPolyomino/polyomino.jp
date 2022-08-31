@@ -1,5 +1,14 @@
+import { SimulatorCanvas } from "@/types/Simulator";
+
 export default class Information {
-  constructor(context, width = 800, height = 600) {
+  context: SimulatorCanvas;
+  width: number;
+  height: number;
+  time: number;
+  endTime: number | null;
+  deliverd: number;
+
+  constructor(context: SimulatorCanvas, width = 800, height = 600) {
     this.context = context;
     this.width = width;
     this.height = height;
@@ -8,7 +17,11 @@ export default class Information {
     this.deliverd = 0;
   }
   draw() {
-    let infoText = [`time : ${this.time}`];
+    if (this.context == null) {
+      throw new Error("context is not defined");
+    }
+
+    const infoText = [`time : ${this.time}`];
     if (this.endTime === null) {
       infoText.push(`deliverd : ${this.deliverd}`);
     } else {
