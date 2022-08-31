@@ -1,4 +1,4 @@
-import { RandomSelect } from "./algorithm";
+import { RandomSelect, RingLargeIdSelect } from "./algorithm";
 import Node from "./node";
 import { describe, expect, test } from "@jest/globals";
 
@@ -33,5 +33,15 @@ describe("ring network test", () => {
 
     const resultMax = RandomSelect(nodes[totalNodes - 1]);
     expect(resultMax.id === totalNodes - 2 || resultMax.id === 0).toBe(true);
+  });
+
+  test("go around", () => {
+    let currentNode = nodes[0];
+    expect(currentNode.id).toBe(0);
+    for (let i = 0; i < totalNodes; i++) {
+      currentNode = RingLargeIdSelect(currentNode, totalNodes - 1);
+      expect(currentNode.id).toBe((i + 1) % totalNodes);
+    }
+    expect(currentNode.id).toBe(0);
   });
 });
