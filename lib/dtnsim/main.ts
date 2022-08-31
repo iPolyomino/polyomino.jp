@@ -16,9 +16,10 @@ export default class Main {
   graph: Graph;
   information: Information;
   agents: Agent[];
+  requestId: number | null;
 
   constructor(
-    canvas: CanvasRenderingContext2D,
+    canvas: HTMLCanvasElement | null,
     { node = 20, agent = 3, range = 10 } = {}
   ) {
     if (canvas == null) {
@@ -45,7 +46,7 @@ export default class Main {
     this.nodes = [...Array(node).keys()].map((key) => {
       const x = Math.random() * this.width;
       const y = Math.random() * this.height;
-      return new Node(this.context, [x, y], key);
+      return new Node(this.context, [x, y], key.toString());
     });
 
     // init voronoi diagram
@@ -60,8 +61,15 @@ export default class Main {
 
     // node connectionNode update
     this.links.forEach((link) => {
-      const sourceIndex = link.source[2];
-      const targetIndex = link.target[2];
+      const sourceId = link.source[2];
+      const targetId = link.target[2];
+
+      if (sourceId == null || targetId == null) {
+        throw new Error();
+      }
+
+      const sourceIndex = parseInt(sourceId, 10);
+      const targetIndex = parseInt(targetId, 10);
 
       // append connectedNode to each other
       this.nodes[sourceIndex].appendConnectedNode(this.nodes[targetIndex]);
@@ -93,6 +101,8 @@ export default class Main {
 
     // source agent
     this.agents[0].isDelivered = true;
+
+    this.requestId = null;
 
     this.render();
   }

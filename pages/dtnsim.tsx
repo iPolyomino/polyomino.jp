@@ -20,9 +20,10 @@ const DtnSimulator: NextPage = () => {
   const [range, setRange] = useState(defaultSettings.range);
   const [graph, setGraph] = useState<GraphSettings>(defaultSettings);
 
-  const dtnRef = useRef<any>();
+  const dtnRef = useRef();
 
   useEffect(() => {
+    // @ts-ignore
     dtnRef.current?.initMain();
   }, [graph]);
 

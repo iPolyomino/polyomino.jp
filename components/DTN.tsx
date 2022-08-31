@@ -16,7 +16,7 @@ interface Props {
 const DTN = forwardRef((props: Props, ref) => {
   const canvas = useRef(null);
 
-  const [main, setMain] = useState<any>();
+  const [main, setMain] = useState<Main | null>();
 
   useEffect(() => {
     setMain(new Main(canvas.current, props.settings));
