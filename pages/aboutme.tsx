@@ -16,19 +16,20 @@ import { default as aboutmeJson } from "@/contents/aboutme.json";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-  const html = ["aboutme", "life"]
+  const html = ["aboutme", "history", "life"]
     .map((name) => getMarkdownFile(name))
     .map((md) => markdownToHTML(md));
-  const [aboutmeHTML, lifeHTML] = await Promise.all(html);
+  const [aboutmeHTML, historyHTML, lifeHTML] = await Promise.all(html);
   return {
     props: {
       aboutmeHTML,
+      historyHTML,
       lifeHTML,
     },
   };
 };
 
-const AboutMe: NextPage<Props> = ({ aboutmeHTML, lifeHTML }) => {
+const AboutMe: NextPage<Props> = ({ aboutmeHTML, historyHTML, lifeHTML }) => {
   const { aboutme } = aboutmeJson;
 
   return (
@@ -41,11 +42,15 @@ const AboutMe: NextPage<Props> = ({ aboutmeHTML, lifeHTML }) => {
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
+
           <Grid item xs={12}>
             <Article data={aboutme} />
           </Grid>
           <Grid item xs={12}>
             <RawArticle html={aboutmeHTML} />
+          </Grid>
+          <Grid item xs={12}>
+            <RawArticle html={historyHTML} />
           </Grid>
           <Grid item xs={12}>
             <RawArticle html={lifeHTML} />
