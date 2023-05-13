@@ -1,10 +1,10 @@
 export const Permutations = (nums: number[], len: number) => {
-  let result: number[][] = [];
+  const result: number[][] = [];
   const permute = (queue: number[] = []) => {
     if (queue.length === len) {
       result.push(queue);
     } else {
-      for (let num of nums) {
+      for (const num of nums) {
         if (!queue.includes(num)) {
           permute(queue.concat(num));
         }
