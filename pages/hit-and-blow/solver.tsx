@@ -15,19 +15,19 @@ import { HitCounter, BlowCounter, InitializeAnswer } from "@/lib/hitandblow/gene
 import { History } from "@/types/HitAndBlow";
 
 const Solver: NextPage = () => {
-  const [numberlength, setNumberlength] = useState<number>(3);
+  const [digit, setDigit] = useState<number>(3);
   const [history, setHistory] = useState<History[]>([]);
-  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(numberlength))
+  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(digit));
 
   useEffect(() => {
-    setCandidate(InitializeAnswer(numberlength));
-  }, [numberlength]);
+    setCandidate(InitializeAnswer(digit));
+  }, [digit]);
 
   const handleNumberLength = (
     _: React.MouseEvent<HTMLElement>,
     newNumberLength: number,
   ) => {
-    setNumberlength(newNumberLength);
+    setDigit(newNumberLength);
   };
 
   const addHistory = (newHistory: History) => {
@@ -49,9 +49,9 @@ const Solver: NextPage = () => {
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid item xs={12}>
             <ContentsCard>
-              <HitAndBlowDigitsSelector numberlength={numberlength} handleNumberLength={handleNumberLength} />
+              <HitAndBlowDigitsSelector digit={digit} handleNumberLength={handleNumberLength} />
               <HitAndBlowAskTable history={history} />
-              <HitAndBlowForm numberlength={numberlength} addHistory={addHistory} />
+              <HitAndBlowForm digit={digit} addHistory={addHistory} />
               <HitAndBlowResult candidate={candidate} />
             </ContentsCard>
           </Grid>

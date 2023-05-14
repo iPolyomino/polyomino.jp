@@ -4,8 +4,8 @@ import Button from "@mui/material/Button";
 
 import { History } from "@/types/HitAndBlow";
 
-const HitAndBlowForm = ({ numberlength, addHistory }: {
-  numberlength: number,
+const HitAndBlowForm = ({ digit, addHistory }: {
+  digit: number,
   addHistory: (history: History) => void,
 }) => {
   const [askednumber, setAskednumber] = useState<string>("");
@@ -17,8 +17,8 @@ const HitAndBlowForm = ({ numberlength, addHistory }: {
     const hitnum = parseInt(hit) || 0;
     const blownum = parseInt(blow) || 0;
 
-    if (hitnum + blownum > numberlength) return;
-    if (askednumber.length !== numberlength) return;
+    if (hitnum + blownum > digit) return;
+    if (askednumber.length !== digit) return;
 
     const newHistory: History = {
       ask: asknum,

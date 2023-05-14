@@ -2,10 +2,10 @@ import React from "react";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-const HitAndBlowDigitsSelector = ({ numberlength, handleNumberLength }: { numberlength: number, handleNumberLength: (_: React.MouseEvent<HTMLElement>, newNumberLength: number) => void }) => {
+const HitAndBlowDigitsSelector = ({ digit, handleNumberLength }: { digit: number, handleNumberLength: (_: React.MouseEvent<HTMLElement>, newNumberLength: number) => void }) => {
   return (
     <ToggleButtonGroup
-      value={numberlength}
+      value={digit}
       exclusive
       onChange={handleNumberLength}
     >
