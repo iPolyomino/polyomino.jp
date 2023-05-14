@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
-
 import NavigationBar from "@/components/NavigationBar";
 import ContentsCard from "@/components/ContentsCard";
 import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
@@ -46,16 +45,22 @@ const Solver: NextPage = () => {
       </Head>
       <NavigationBar />
       <CenterrizedHorizontalGrid>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
-          <Grid item xs={12}>
-            <ContentsCard>
+        <ContentsCard>
+          <Grid container spacing={{ xs: 3 }} columns={12}>
+            <Grid item xs={12}>
               <HitAndBlowDigitsSelector digit={digit} handleNumberLength={handleNumberLength} />
+            </Grid>
+            <Grid item xs={12}>
               <HitAndBlowAskTable history={history} />
+            </Grid>
+            <Grid item xs={12}>
               <HitAndBlowForm digit={digit} addHistory={addHistory} />
+            </Grid>
+            <Grid item xs={12}>
               <HitAndBlowResult candidate={candidate} />
-            </ContentsCard>
+            </Grid>
           </Grid>
-        </Grid>
+        </ContentsCard>
       </CenterrizedHorizontalGrid>
     </>
   );

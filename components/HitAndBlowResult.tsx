@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Switch from "@mui/material/Switch";
 import FormGroup from '@mui/material/FormGroup';
@@ -17,6 +18,7 @@ const HitAndBlowResult = ({ candidate }: { candidate: Candidate }) => {
 
   return (
     <>
+      <Typography variant="h5" sx={{ my: 1 }}>Candidate</Typography>
       <Grid container spacing={{ xs: 2 }} columns={12}>
         {candidate.map((value, i) => {
           if (!displayall && i > threshold) return;
@@ -33,6 +35,7 @@ const HitAndBlowResult = ({ candidate }: { candidate: Candidate }) => {
             <Switch checked={displayall} onChange={toggleSwitch} />} label="display all" />
         </FormGroup>
       }
+      <Typography>total candidates: {candidate.length}</Typography>
     </>
   )
 }
