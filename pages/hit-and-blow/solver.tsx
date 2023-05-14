@@ -26,6 +26,7 @@ const Solver: NextPage = () => {
     _: React.MouseEvent<HTMLElement>,
     newNumberLength: number,
   ) => {
+    if (newNumberLength === null) return;
     setDigit(newNumberLength);
   };
 
