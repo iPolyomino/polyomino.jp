@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import MessageDialog from "@/components/MessageDialog";
 
 import { History } from "@/types/HitAndBlow";
 
@@ -14,13 +15,24 @@ const HitAndBlowForm = ({ digit, addHistory }: {
   const [hit, setHit] = useState<string>("");
   const [blow, setBlow] = useState<string>("");
 
+  const [message, setMessage] = useState<string>("");
+  const [open, setOpen] = useState<boolean>(false);
+
   const handleApply = () => {
     const asknum = askednumber.split("").map((e) => parseInt(e));
     const hitnum = parseInt(hit) || 0;
     const blownum = parseInt(blow) || 0;
 
-    if (hitnum + blownum > digit) return;
-    if (askednumber.length !== digit) return;
+    if (hitnum + blownum > digit) {
+      setMessage(`The sum of hit and blow must be less than or equal to ${digit}.`);
+      setOpen(true);
+      return;
+    }
+    if (askednumber.length !== digit) {
+      setMessage(`The number length must be equal to ${digit}.`);
+      setOpen(true);
+      return;
+    }
 
     const newHistory: History = {
       ask: asknum,
@@ -52,6 +64,7 @@ const HitAndBlowForm = ({ digit, addHistory }: {
           <Button variant="contained" onClick={handleApply}>Apply</Button>
         </Grid>
       </Grid>
+      <MessageDialog message={message} isOpen={open} handleClose={() => setOpen(false)} />
     </>
   )
 }
