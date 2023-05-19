@@ -42,7 +42,8 @@ const Solver: NextPage = () => {
     <>
       <Head>
         <title>Hit and Blow solver</title>
-        <meta name="description" content="DTN simulator" />
+        <meta name="description" content="Hit&Blow solver, This website solve hit and blow. 6 different numbers correspond to 4 digit games. This game is popularly known as Mastermind." />
+        <meta name="keywords" content="Hit&Blow, ヒットアンドブロー, Mastermind, マスターマインド, アソビ大全" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />

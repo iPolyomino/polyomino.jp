@@ -49,7 +49,8 @@ const Solver: NextPage = () => {
     <>
       <Head>
         <title>Hit and Blow solver</title>
-        <meta name="description" content="DTN simulator" />
+        <meta name="description" content="Hit&Blow solver, This website solve hit and blow. 10 different numbers correspond to 3 to 5 digit games." />
+        <meta name="keywords" content="Hit&Blow, ヒットアンドブロー" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
