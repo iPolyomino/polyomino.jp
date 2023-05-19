@@ -29,7 +29,7 @@ const NumberColorSample = styled.div`
 const Solver: NextPage = () => {
   const digit = 4;
   const [history, setHistory] = useState<History[]>([]);
-  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(6, digit));
+  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(digit, 6));
 
   const addHistory = (newHistory: History) => {
     setCandidate(candidate

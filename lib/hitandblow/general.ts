@@ -44,4 +44,4 @@ export const BlowCounter = (a: number[], b: number[]) => {
   return ans;
 };
 
-export const InitializeAnswer = (variety: number, len: number) => Permutations([...Array(variety).keys()], len);
+export const InitializeAnswer = (len: number, variety = 10) => Permutations([...Array(variety).keys()], len);

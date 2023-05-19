@@ -16,10 +16,10 @@ import { History } from "@/types/HitAndBlow";
 const Solver: NextPage = () => {
   const [digit, setDigit] = useState<number>(3);
   const [history, setHistory] = useState<History[]>([]);
-  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(10, digit));
+  const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(digit));
 
   useEffect(() => {
-    setCandidate(InitializeAnswer(10, digit));
+    setCandidate(InitializeAnswer(digit));
   }, [digit]);
 
   const handleNumberLength = (
