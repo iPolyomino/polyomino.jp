@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
@@ -9,7 +9,7 @@ import HitAndBlowAskTable from "@/components/HitAndBlowAskTable";
 import HitAndBlowForm from "@/components/HitAndBlowForm";
 import HitAndBlowResult from "@/components/HitAndBlowResult";
 
-import { HitCounter, BlowCounter, InitializeAnswer } from "@/lib/hitandblow/general";
+import { HitCounter, BlowCounter, InitializeAnswer, SelectRecommend } from "@/lib/hitandblow/general";
 import { History } from "@/types/HitAndBlow";
 
 import styled from "@emotion/styled";
@@ -30,6 +30,7 @@ const Solver: NextPage = () => {
   const digit = 4;
   const [history, setHistory] = useState<History[]>([]);
   const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(digit, 6));
+  const [recommend, setRecommend] = useState<number[] | undefined>();
 
   const addHistory = (newHistory: History) => {
     setCandidate(candidate
@@ -37,6 +38,10 @@ const Solver: NextPage = () => {
       .filter((cand) => BlowCounter(cand, newHistory.ask) === newHistory.blow));
     setHistory([...history, newHistory]);
   }
+
+  useEffect(() => {
+    setRecommend(SelectRecommend(candidate)?.recommend);
+  }, [candidate])
 
   return (
     <>
@@ -77,7 +82,7 @@ const Solver: NextPage = () => {
               <HitAndBlowForm digit={digit} addHistory={addHistory} />
             </Grid>
             <Grid item xs={12}>
-              <HitAndBlowResult candidate={candidate} />
+              <HitAndBlowResult candidate={candidate} recommend={recommend} />
             </Grid>
           </Grid>
         </ContentsCard>
