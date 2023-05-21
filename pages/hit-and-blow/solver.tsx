@@ -11,13 +11,14 @@ import HitAndBlowForm from "@/components/HitAndBlowForm";
 import HitAndBlowResult from "@/components/HitAndBlowResult";
 import MessageDialog from "@/components/MessageDialog";
 
-import { HitCounter, BlowCounter, InitializeAnswer } from "@/lib/hitandblow/general";
+import { HitCounter, BlowCounter, InitializeAnswer, SelectRecommend } from "@/lib/hitandblow/general";
 import { History } from "@/types/HitAndBlow";
 
 const Solver: NextPage = () => {
   const [digit, setDigit] = useState<number>(3);
   const [history, setHistory] = useState<History[]>([]);
   const [candidate, setCandidate] = useState<number[][]>(InitializeAnswer(digit));
+  const [recommend, setRecommend] = useState<number[] | undefined>();
   const [message, setMessage] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
 
@@ -45,6 +46,10 @@ const Solver: NextPage = () => {
     setHistory([...history, newHistory]);
   }
 
+  useEffect(() => {
+    setRecommend(SelectRecommend(candidate)?.recommend);
+  }, [candidate])
+
   return (
     <>
       <Head>
@@ -67,7 +72,7 @@ const Solver: NextPage = () => {
               <HitAndBlowForm digit={digit} addHistory={addHistory} />
             </Grid>
             <Grid item xs={12}>
-              <HitAndBlowResult candidate={candidate} />
+              <HitAndBlowResult candidate={candidate} recommend={recommend} />
             </Grid>
           </Grid>
         </ContentsCard>
