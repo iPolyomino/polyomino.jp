@@ -52,7 +52,7 @@ export const SelectRecommend = (nums: number[][]) => {
     blow: number;
   }
 
-  if (nums.length === 0) return undefined;
+  if (nums.length === 0 || nums.length >= 1000) return undefined;
 
   const numLength = nums[0].length;
   let hitblow: HitBlow[] = [];
