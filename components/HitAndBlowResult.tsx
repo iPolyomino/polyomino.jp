@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 type Candidate = number[][];
 
-const HitAndBlowResult = ({ candidate }: { candidate: Candidate }) => {
+const HitAndBlowResult = ({ candidate, recommend }: { candidate: Candidate, recommend: number[] | undefined }) => {
 
   const threshold = 1000;
   const [displayall, setDisplayall] = useState<boolean>(false);
@@ -23,7 +23,7 @@ const HitAndBlowResult = ({ candidate }: { candidate: Candidate }) => {
         {candidate.map((value, i) => {
           if (!displayall && i > threshold) return;
           return (
-            <Grid item key={value.join('')}>
+            <Grid item key={value.join('')} sx={{ fontWeight: value === recommend ? 'bold' : 'normal' }}>
               {value}
             </Grid>
           );

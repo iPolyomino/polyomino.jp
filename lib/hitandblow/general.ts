@@ -45,3 +45,41 @@ export const BlowCounter = (a: number[], b: number[]) => {
 };
 
 export const InitializeAnswer = (len: number, variety = 10) => Permutations([...Array(variety).keys()], len);
+
+export const SelectRecommend = (nums: number[][]) => {
+  interface HitBlow {
+    hit: number;
+    blow: number;
+  }
+
+  if (nums.length === 0) return undefined;
+
+  const numLength = nums[0].length;
+  let hitblow: HitBlow[] = [];
+  for (let i = 0; i < numLength; i++) {
+    for (let j = 0; i + j < numLength; j++) {
+      hitblow = [...hitblow, { hit: i, blow: j }];
+    }
+  }
+  const CalcHitBlow = (nums: number[][], next: number[]) => {
+    interface Result {
+      [key: string]: number;
+    }
+    const result: Result = {};
+    for (const hb of hitblow) {
+      const hbResult = nums
+        .filter((hbr) => HitCounter(hbr, next) === hb.hit)
+        .filter((hbr) => BlowCounter(hbr, next) === hb.blow);
+      result[`${hb.hit}hit${hb.blow}blow`] = hbResult.length;
+    }
+    return result;
+  }
+
+  const recommend = nums.map(next => {
+    const hitblow = CalcHitBlow(nums, next);
+    const mx = Math.max(...Object.values(hitblow));
+    return { recommend: next, max: mx, hitblow: hitblow }
+  }).sort((a, b) => a.max - b.max)
+
+  return recommend[0];
+}
