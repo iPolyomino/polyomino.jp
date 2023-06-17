@@ -19,9 +19,9 @@ const NumberColorSample = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  clip-path: circle(50px);
+  width: 4rem;
+  height: 4rem;
+  clip-path: circle(2rem);
   font-size: 3rem;
   color: white
 `
