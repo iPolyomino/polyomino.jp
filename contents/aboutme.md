@@ -60,8 +60,7 @@ In the university, I was involved in the development of interactive projection m
 
 - 青春 18 きっぷで 電車に乗り続けた話
   - [Twitter](https://twitter.com/i/events/893430354580656128)
-  - 大阪 →(紀伊半島一周)→ 大垣 →(ムーンライトながら)→ 東京 → 高崎 → 小山 → 上野 →
-    → (都電荒川線 を端から橋まで乗る) → 高尾 → 甲府 → 中津川 → 名古屋 → 大阪
+  - 大阪 → (紀伊半島一周) → 大垣 → (ムーンライトながら) → 東京 → 高崎 → 小山 → 上野 → (都電荒川線を端から端まで乗る) → 高尾 → 甲府 → 中津川 → 名古屋 → 大阪
 - バイトヒーロー.com というドメインを取得した話
   - [Twitter](https://twitter.com/iPolyomino/status/1265356177942048768)
   - ドメインネタが好き
