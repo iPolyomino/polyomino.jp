@@ -71,7 +71,7 @@
       },
       "title": "ちょっとちゃっと",
       "sentence": {
-        "text": "ちょっとだけチャットができるアプリケーションです。React(Next.js) + Firebase + ソースコード Actions の練習のために作りました。",
+        "text": "ちょっとだけチャットができるアプリケーションです。React(Next.js) + Firebase + GitHub Actions の練習のために作りました。",
         "links": [
           {
             "name": "ちょっとちゃっと",
