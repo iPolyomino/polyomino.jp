@@ -8,10 +8,6 @@ I created a website and an iOS application to convey this fact to many people. I
 
 In the university, I was involved in the development of interactive projection mapping. Interactive projection mapping is the part of projection mapping in which the projected image changes by audience operation. I was made this application by using web technology. In this time, I encounter the problem of large scale networking. Communication by many people causes delays due to congestion. Then I get interested in large scale networking.
 
-[GitHub](https://github.com/iPolyomino)
-[Twitter](https://twitter.com/iPolyomino)
-[LinkedIn](https://www.linkedin.com/in/joe-hagikura/)
-
 # Keywords
 
 - World Wide Web
