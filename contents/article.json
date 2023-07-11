@@ -15,7 +15,7 @@
             "url": "https://oz.polyomino.jp"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/ipolyomino/oz"
           }
         ]
@@ -36,7 +36,7 @@
             "url": "https://timer.polyomino.jp/"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/iPolyomino/EVA-TIMER"
           }
         ]
@@ -57,7 +57,7 @@
             "url": "https://voyage.polyomino.jp/"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/iPolyomino/voyage"
           }
         ]
@@ -71,14 +71,14 @@
       },
       "title": "ちょっとちゃっと",
       "sentence": {
-        "text": "ちょっとだけチャットができるアプリケーションです。React(Next.js) + Firebase + GitHub Actions の練習のために作りました。",
+        "text": "ちょっとだけチャットができるアプリケーションです。React(Next.js) + Firebase + ソースコード Actions の練習のために作りました。",
         "links": [
           {
             "name": "ちょっとちゃっと",
             "url": "https://chat.polyomino.jp"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/ipolyomino/supercell"
           }
         ]
@@ -103,7 +103,7 @@
             "url": "https://shikkui.kasgai.com"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/Kasgai"
           }
         ]
@@ -124,8 +124,67 @@
             "url": "https://awacha.com"
           },
           {
-            "name": "GitHub",
+            "name": "ソースコード",
             "url": "https://github.com/iPolyomino/awacha"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "gsi.webp",
+        "jpg": "gsi.jpp",
+        "alt": "複数の地図を閲覧できるウェブサイトのスクリーンショット"
+      },
+      "title": "複数地図同時閲覧ツール",
+      "sentence": {
+        "text": "複数の地図（標準地図、20 万分 1 土地利用図、数値地図25000、色別標高図）を同時に閲覧することができるツールです。住む場所を考えるときや土地の特徴を把握するときに使えます。",
+        "links": [
+          {
+            "name": "複数地図同時閲覧ツール",
+            "url": "https://gsi.polyomino.jp/"
+          },
+          {
+            "name": "ソースコード",
+            "url": "https://github.com/iPolyomino/gsi.polyomino.jp"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "lsnl.webp",
+        "png": "lsnl.png",
+        "alt": "ネットワーク研究室Webサイトのスクリーンショット"
+      },
+      "title": "Network Architecture Laboratory",
+      "sentence": {
+        "text": "私が研究室で先生から教えてもらったことをまとめています。研究に関係することのみならず、生き方や考え方、議論のしかたまで多岐にわたります。",
+        "links": [
+          {
+            "name": "lsnl",
+            "url": "https://lsnl.polyomino.jp/"
+          },
+          {
+            "name": "ソースコード",
+            "url": "https://github.com/iPolyomino/lsnl.polyomino.jp"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "hit_and_blow.webp",
+        "png": "hit_and_blow.png",
+        "alt": "Hit & Blow の補助ツールのスクリーンショット"
+      },
+      "title": "Hit & Blow 補助ツール",
+      "sentence": {
+        "text": "ヒットアンドブローで遊ぶ際、残りのあり得る候補の数字を列挙してくれるツールです。3桁から5桁の数字で遊ぶときに利用できます。",
+        "links": [
+          {
+            "name": "Hit & Blow 補助ツール",
+            "url": "/hit-and-blow/solver"
           }
         ]
       }
@@ -160,23 +219,6 @@
           {
             "name": "DTNシミュレータ",
             "url": "/dtnsim"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "lsnl.webp",
-        "png": "lsnl.png",
-        "alt": "ネットワーク研究室Webサイトのスクリーンショット"
-      },
-      "title": "Network Architecture Laboratory",
-      "sentence": {
-        "text": "私が研究室で先生から教えてもらったことをまとめています。研究に関係することのみならず、生き方や考え方、議論のしかたまで多岐にわたります。",
-        "links": [
-          {
-            "name": "lsnl",
-            "url": "https://lsnl.polyomino.jp/"
           }
         ]
       }
