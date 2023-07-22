@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import ContentsCard from "@/components/ContentsCard";
@@ -62,8 +63,14 @@ const Article = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          {data.sentence.links &&
-            data.sentence.links.map((link, i) => <Links link={link} key={i} />)}
+          <Grid container spacing={1}>
+            {data.sentence.links &&
+              data.sentence.links.map((link, i) => (
+                <Grid item key={i}>
+                  <Links link={link} />
+                </Grid>
+              ))}
+          </Grid>
         </CardActions>
       </article>
     </ContentsCard>
