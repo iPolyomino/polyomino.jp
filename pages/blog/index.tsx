@@ -25,7 +25,9 @@ const Blog: NextPage<Props> = ({ summary }) => {
     <>
       <Head>
         <title>Blog</title>
-        <meta name="description" content="Hagi Blog" />
+        <meta name="description" content="Hagi blog index page" />
+        <meta name="keywords" content="Hagi,iPolyomino,polyomino,blog" />
+        <meta name="author" content="Hagi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
