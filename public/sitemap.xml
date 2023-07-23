@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
   <loc>https://polyomino.jp</loc>
-  <lastmod>2021-01-04T02:51:24+00:00</lastmod>
+  <lastmod>2023-07-23T12:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://polyomino.jp/aboutme</loc>
-  <lastmod>2021-01-04T02:51:24+00:00</lastmod>
+  <lastmod>2023-07-23T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://polyomino.jp/hobby</loc>
-  <lastmod>2021-01-04T02:51:24+00:00</lastmod>
+  <loc>https://polyomino.jp/hit-and-blow/solver</loc>
+  <lastmod>2023-07-23T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://polyomino.jp/hit-and-blow/asobi</loc>
+  <lastmod>2023-07-23T12:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://polyomino.jp/dtnsim</loc>
+  <lastmod>2023-07-23T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://polyomino.jp/hobby</loc>
   <lastmod>2021-01-04T02:51:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -37,6 +47,11 @@
   <loc>https://polyomino.jp/blog</loc>
   <lastmod>2021-01-04T02:51:24+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://polyomino.jp/blog/2022-12-29-0001</loc>
+  <lastmod>2022-12-29T00:00:00+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://polyomino.jp/blog/2021-08-20-0001</loc>
