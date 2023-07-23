@@ -12,7 +12,7 @@ import { getPosts, getBlog } from "@/lib/api";
 import { markdownToHTML } from "@/lib/markdown";
 
 interface Props {
-  data: { title: string; date: string };
+  data: { title: string; description: string; keywords: string; date: string; };
   html: string;
 }
 
@@ -47,8 +47,10 @@ const Blog: NextPage<Props> = ({ data, html }) => {
   return (
     <>
       <Head>
-        <title>Blog</title>
-        <meta name="description" content="Hagi's portfolio website." />
+        <title>{data.title}</title>
+        <meta name="description" content={data.description} />
+        <meta name="keywords" content={data.keywords} />
+        <meta name="author" content="Hagi" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
