@@ -8,6 +8,7 @@ export interface Media {
 export interface Link {
   name: string;
   url: string;
+  rel?: string;
 }
 
 export interface Sentence {

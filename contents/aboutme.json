@@ -6,7 +6,8 @@
       "links": [
         {
           "name": "Mastodon",
-          "url": "https://polyomino.app"
+          "url": "https://polyomino.app/@hagi",
+          "rel": "me"
         },
         {
           "name": "Twitter",
