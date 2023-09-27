@@ -252,13 +252,8 @@
       },
       "title": "CasAA",
       "sentence": {
-        "text": "ツイキャスで定型文を送信するiPhoneアプリです。アスキーアート(AA)を投稿することを想定して作りました。",
-        "links": [
-          {
-            "name": "CasAA",
-            "url": "https://itunes.apple.com/jp/app/casaa/id1289298193"
-          }
-        ]
+        "text": "ツイキャスで定型文を送信するiPhoneアプリです。アスキーアート(AA)を投稿することを想定して作りました。ツイキャスにおいて、Sign in with Apple が提供されていないため、公開停止中です。",
+        "links": []
       }
     },
     {
@@ -273,7 +268,41 @@
         "links": [
           {
             "name": "TRPG DICE",
-            "url": "https://itunes.apple.com/jp/app/trpg-dice/id1096999521"
+            "url": "https://apps.apple.com/jp/app/trpg-dice/id1096999521"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "text2unicode.webp",
+        "jpg": "text2unicode.jpg",
+        "alt": "text2unicode アプリのスクリーンショット。文字や絵文字から Unicode に変換された様子が写っている。"
+      },
+      "title": "Text2Unicode",
+      "sentence": {
+        "text": "入力した文字列の Unicode を表示できるアプリです。プログラミングをする際など、Unicode が気になったとき、手軽に調べることができます。",
+        "links": [
+          {
+            "name": "Text2Unicode",
+            "url": "https://apps.apple.com/jp/app/text2unicode/id6455461571"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "rhythmorse.webp",
+        "jpg": "rhythmorse.jpg",
+        "alt": "Rhythmorse アプリ配布をしている Play ストアのスクリーンショット"
+      },
+      "title": "Rhythmorse",
+      "sentence": {
+        "text": "リズムゲーム感覚でモールス信号を練習することができるアプリです。練習する文字は自分で設定できるので、自分のコールサインを練習するのも楽しいと思います。",
+        "links": [
+          {
+            "name": "Rhythmorse",
+            "url": "https://play.google.com/store/apps/details?id=jp.polyomino.rhythmorse"
           }
         ]
       }
