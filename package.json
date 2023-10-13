@@ -26,8 +26,7 @@
     "react-dom": "18.2.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
-    "remark-html": "^16.0.1",
-    "strip-markdown": "^5.0.1"
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
     "@types/node": "20.8.5",
