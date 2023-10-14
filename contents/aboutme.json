@@ -10,16 +10,16 @@
           "rel": "me"
         },
         {
-          "name": "Twitter",
-          "url": "https://twitter.com/iPolyomino"
-        },
-        {
           "name": "GitHub",
           "url": "https://github.com/iPolyomino"
         },
         {
           "name": "LinkdIn",
           "url": "https://www.linkedin.com/in/joe-hagikura/"
+        },
+        {
+          "name":"email",
+          "url": "mailto:macbookpromacbookpromacbookpro@gmail.com"
         }
       ]
     }
