@@ -34,7 +34,7 @@ const fileToArticle = async (dirPath: string, fileName: string) => {
   const article: ArticleData = {
     title: data.title,
     sentence: {
-      text: text.substring(0, 700),
+      text: text.substring(0, 400),
       links: [link],
     },
   };
