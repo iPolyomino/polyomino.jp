@@ -309,17 +309,17 @@
     },
     {
       "media": {
-        "webp": "projection_mapping.webp",
-        "jpg": "projection_mapping.jpg",
-        "alt": "時計台を中央に、雪が降ってきている画像。アプリケーションのスクリーンショット"
+        "webp": "chocolategame.webp",
+        "jpg": "chocolategame.jpg",
+        "alt": "チョコレート風のコンテンツが表示されたウェブサイトのスクリーンショット"
       },
-      "title": "プロジェクションマッピング",
+      "title": "全国中学高校Webコンテスト",
       "sentence": {
-        "text": "プロジェクションマッピングにおけるインタラクティブパートの作成を行いました。A-Frameを用いたVRゲームです。スマートフォンのジャイロセンサを有効にしてお楽しみください。",
+        "text": "全国中学高校Webコンテストへ提出した作品です。「ニム」というゲームの変種である、「チョコレートゲーム」というゲームについて紹介するウェブサイトです。コンテストでは、金賞を受賞しました。",
         "links": [
           {
-            "name": "プロジェクションマッピング",
-            "url": "http://ist.ksc.kwansei.ac.jp/miwa/miwaLab/kgpm/interactive/"
+            "name": "チョコレートゲーム",
+            "url": "https://contest.japias.jp/tqj18/180020/"
           }
         ]
       }
@@ -343,6 +343,18 @@
     },
     {
       "media": {
+        "webp": "projection_mapping.webp",
+        "jpg": "projection_mapping.jpg",
+        "alt": "時計台を中央に、雪が降ってきている画像。アプリケーションのスクリーンショット"
+      },
+      "title": "プロジェクションマッピング",
+      "sentence": {
+        "text": "プロジェクションマッピングにおけるインタラクティブパートの作成を行いました。A-Frameを用いたVRゲームです。スマートフォンのジャイロセンサを有効にしてお楽しみください。",
+        "links": []
+      }
+    },
+    {
+      "media": {
         "webp": "virtual_science_fair.webp",
         "png": "virtual_science_fair.png",
         "alt": "数学コンテンツを紹介するウェブサイトのスクリーンショット"
@@ -350,29 +362,7 @@
       "title": "Canada Wide Virtual Science Fair",
       "sentence": {
         "text": "Canada Wide Virtual Science Fairへ提出した作品です。チョコレートゲームとヌメロンの研究を行いました。",
-        "links": [
-          {
-            "name": "Science Fair",
-            "url": "http://www.virtualsciencefair.org/2014/inou14m"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "chocolategame.webp",
-        "jpg": "chocolategame.jpg",
-        "alt": "チョコレート風のコンテンツが表示されたウェブサイトのスクリーンショット"
-      },
-      "title": "全国中学高校Webコンテスト",
-      "sentence": {
-        "text": "全国中学高校Webコンテストへ提出した作品です。「ニム」というゲームの変種である、「チョコレートゲーム」というゲームについて紹介するウェブサイトです。コンテストでは、金賞を受賞しました。",
-        "links": [
-          {
-            "name": "チョコレートゲーム",
-            "url": "https://contest.japias.jp/tqj18/180020/"
-          }
-        ]
+        "links": []
       }
     }
   ]
