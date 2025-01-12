@@ -11,7 +11,6 @@ export type Link = {
   target: Coordinate;
 };
 
-export type VoronoiLink = {
-  source: [number, number, number];
-  target: [number, number, number];
-};
+// Argument types for the voronoi library
+// [[x, y, id], ...]
+export type VoronoiLink = [number, number, number];

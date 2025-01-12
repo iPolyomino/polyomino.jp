@@ -20,7 +20,6 @@ const DTN = forwardRef((props: Props, ref) => {
 
   useEffect(() => {
     setMain(new Main(canvas.current, props.settings));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useImperativeHandle(ref, () => ({

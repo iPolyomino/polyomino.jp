@@ -13,6 +13,10 @@ import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 
 import { GraphSettings } from "@/types/GraphSettings";
 
+type DTNHandle = {
+  initMain: () => void;
+};
+
 const DtnSimulator: NextPage = () => {
   const defaultSettings = { node: 20, agent: 10, range: 40 };
   const [node, setNode] = useState(defaultSettings.node);
@@ -20,10 +24,9 @@ const DtnSimulator: NextPage = () => {
   const [range, setRange] = useState(defaultSettings.range);
   const [graph, setGraph] = useState<GraphSettings>(defaultSettings);
 
-  const dtnRef = useRef();
+  const dtnRef = useRef<DTNHandle>(null);
 
   useEffect(() => {
-    // @ts-ignore
     dtnRef.current?.initMain();
   }, [graph]);
 
