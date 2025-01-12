@@ -4,7 +4,6 @@ import Information from "./information";
 import Node from "./node";
 import { SimulatorCanvas, Link, VoronoiLink } from "@/types/Simulator";
 
-// @ts-ignore
 import { voronoi as d3Voronoi } from "d3-voronoi";
 
 export default class Main {
@@ -50,20 +49,19 @@ export default class Main {
     });
 
     // init voronoi diagram
-    const voronoi = d3Voronoi();
+    const voronoi = d3Voronoi<VoronoiLink>();
     voronoi.extent([
       [0, 0],
       [this.width, this.height],
     ]);
-    // data = [[x, y, id], ...]
-    const data = this.nodes.map((node) => [
+    const data: Array<VoronoiLink> = this.nodes.map((node) => [
       node.coordinate.x,
       node.coordinate.y,
       node.id,
     ]);
-    const voronoiLink: VoronoiLink[] = voronoi(data).links();
+    const voronoiLinks = voronoi(data).links();
 
-    this.links = voronoiLink.map((link: VoronoiLink) => {
+    this.links = voronoiLinks.map((link) => {
       return {
         source: {
           x: link.source[0],

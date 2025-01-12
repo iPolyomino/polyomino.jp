@@ -23,7 +23,6 @@ const DtnSimulator: NextPage = () => {
   const dtnRef = useRef();
 
   useEffect(() => {
-    // @ts-ignore
     dtnRef.current?.initMain();
   }, [graph]);
 
