@@ -4,19 +4,16 @@ import Grid from "@mui/material/Grid";
 
 import NavigationBar from "@/components/NavigationBar";
 import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
-import Article from "@/components/Article";
 import RawArticle from "@/components/RawArticle";
 import Footer from "@/components/Footer";
 
 import { getMarkdownFile } from "@/lib/api";
 import { markdownToHTML } from "@/lib/markdown";
 
-import { default as aboutmeJson } from "@/contents/aboutme.json";
-
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-  const html = ["aboutme", "history", "life"]
+  const html = ["abstract", "history", "life"]
     .map((name) => getMarkdownFile(name))
     .map((md) => markdownToHTML(md));
   const [aboutmeHTML, historyHTML, lifeHTML] = await Promise.all(html);
@@ -30,22 +27,17 @@ export const getStaticProps = async () => {
 };
 
 const AboutMe: NextPage<Props> = ({ aboutmeHTML, historyHTML, lifeHTML }) => {
-  const { aboutme } = aboutmeJson;
 
   return (
     <>
       <Head>
-        <title>aboutme</title>
+        <title>About</title>
         <meta name="description" content="Hagi's portfolio website." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
-
-          <Grid item xs={12}>
-            <Article data={aboutme} />
-          </Grid>
           <Grid item xs={12}>
             <RawArticle html={aboutmeHTML} />
           </Grid>
