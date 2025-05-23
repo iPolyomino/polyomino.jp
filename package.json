@@ -8,6 +8,7 @@
     "start": "next start -p ${PORT:-8080}",
     "lint": "eslint './**/*.{ts,tsx}'",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "prepare": "git config --local core.hooksPath .githooks"
   },
   "dependencies": {
