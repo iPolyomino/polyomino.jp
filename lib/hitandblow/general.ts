@@ -44,7 +44,8 @@ export const BlowCounter = (a: number[], b: number[]) => {
   return ans;
 };
 
-export const InitializeAnswer = (len: number, variety = 10) => Permutations([...Array(variety).keys()], len);
+export const InitializeAnswer = (len: number, variety = 10) =>
+  Permutations([...Array(variety).keys()], len);
 
 export const SelectRecommend = (nums: number[][]) => {
   interface HitBlow {
@@ -73,13 +74,15 @@ export const SelectRecommend = (nums: number[][]) => {
       result[`${hb.hit}hit${hb.blow}blow`] = hbResult.length;
     }
     return result;
-  }
+  };
 
-  const recommend = nums.map(next => {
-    const hitblow = CalcHitBlow(nums, next);
-    const mx = Math.max(...Object.values(hitblow));
-    return { recommend: next, max: mx, hitblow: hitblow }
-  }).sort((a, b) => a.max - b.max)
+  const recommend = nums
+    .map((next) => {
+      const hitblow = CalcHitBlow(nums, next);
+      const mx = Math.max(...Object.values(hitblow));
+      return { recommend: next, max: mx, hitblow: hitblow };
+    })
+    .sort((a, b) => a.max - b.max);
 
   return recommend[0];
-}
+};

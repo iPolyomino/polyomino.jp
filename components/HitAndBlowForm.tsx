@@ -7,9 +7,12 @@ import MessageDialog from "@/components/MessageDialog";
 
 import { History } from "@/types/HitAndBlow";
 
-const HitAndBlowForm = ({ digit, addHistory }: {
-  digit: number,
-  addHistory: (history: History) => void,
+const HitAndBlowForm = ({
+  digit,
+  addHistory,
+}: {
+  digit: number;
+  addHistory: (history: History) => void;
 }) => {
   const [askednumber, setAskednumber] = useState<string>("");
   const [hit, setHit] = useState<string>("");
@@ -24,7 +27,9 @@ const HitAndBlowForm = ({ digit, addHistory }: {
     const blownum = parseInt(blow) || 0;
 
     if (hitnum + blownum > digit) {
-      setMessage(`The sum of hit and blow must be less than or equal to ${digit}.`);
+      setMessage(
+        `The sum of hit and blow must be less than or equal to ${digit}.`,
+      );
       setOpen(true);
       return;
     }
@@ -40,33 +45,53 @@ const HitAndBlowForm = ({ digit, addHistory }: {
       blow: blownum,
     };
 
-    addHistory(newHistory)
+    addHistory(newHistory);
 
-    setAskednumber("")
-    setHit("")
-    setBlow("")
-  }
+    setAskednumber("");
+    setHit("");
+    setBlow("");
+  };
 
   return (
     <>
-      <Typography variant="h5" sx={{ my: 1 }}>Question Result</Typography>
+      <Typography variant="h5" sx={{ my: 1 }}>
+        Question Result
+      </Typography>
       <Grid container spacing={{ xs: 3 }}>
-        <Grid item>
-          <TextField label="number" value={askednumber} onChange={e => setAskednumber(e.target.value)} />
+        <Grid>
+          <TextField
+            label="number"
+            value={askednumber}
+            onChange={(e) => setAskednumber(e.target.value)}
+          />
         </Grid>
-        <Grid item>
-          <TextField label="hit" value={hit} onChange={e => setHit(e.target.value)} />
+        <Grid>
+          <TextField
+            label="hit"
+            value={hit}
+            onChange={(e) => setHit(e.target.value)}
+          />
         </Grid>
-        <Grid item>
-          <TextField label="blow" value={blow} onChange={e => setBlow(e.target.value)} />
+        <Grid>
+          <TextField
+            label="blow"
+            value={blow}
+            onChange={(e) => setBlow(e.target.value)}
+          />
         </Grid>
-        <Grid item my={1}>
-          <Button variant="contained" onClick={handleApply}>Apply</Button>
+        <Grid my={1}>
+          <Button variant="contained" onClick={handleApply}>
+            Apply
+          </Button>
         </Grid>
       </Grid>
-      <MessageDialog message={message} isOpen={open} handleClose={() => setOpen(false)} />
+      <MessageDialog
+        message={message}
+        isOpen={open}
+        handleClose={() => setOpen(false)}
+      />
     </>
-  )
-}
+  );
+};
 
 export default HitAndBlowForm;

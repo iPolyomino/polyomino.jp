@@ -12,7 +12,7 @@ describe("hit counter test", () => {
     expect(HitCounter([1, 1, 1], [1, 2, 3])).toBe(1);
     expect(HitCounter([1, 2, 2], [1, 2, 3])).toBe(2);
     expect(HitCounter([4, 4, 4], [1, 2, 3])).toBe(0);
-  })
+  });
 });
 
 describe("blow counter test", () => {
@@ -29,7 +29,7 @@ describe("blow counter test", () => {
     expect(BlowCounter([1, 1, 1], [1, 2, 3])).toBe(2);
     expect(BlowCounter([1, 2, 2], [1, 2, 3])).toBe(1);
     expect(BlowCounter([4, 4, 4], [1, 2, 3])).toBe(0);
-  })
+  });
 });
 
 describe("initialize answer test", () => {
@@ -49,4 +49,3 @@ describe("initialize answer test", () => {
     expect([...new Set(answers5)].length).toBe(answers5.length);
   });
 });
-

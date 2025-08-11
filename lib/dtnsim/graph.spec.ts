@@ -37,7 +37,7 @@ describe("error test", () => {
     });
 
     expect(() => new Graph(null, 800, 600, nodes, [])).toThrow(
-      new Error("cannot create graph by single node")
+      new Error("cannot create graph by single node"),
     );
   });
 
@@ -53,7 +53,7 @@ describe("error test", () => {
     // don't set connectedNode
 
     expect(() => new Graph(null, 800, 600, nodes, links)).toThrow(
-      new Error("invalid number of links")
+      new Error("invalid number of links"),
     );
   });
 });

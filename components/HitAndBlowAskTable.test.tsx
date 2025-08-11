@@ -7,8 +7,8 @@ describe("HitAndBlowAskTable", () => {
 
   it("履歴が正しく表示される", () => {
     const history = [
-      { ask: [1,2,3], hit: 2, blow: 1 },
-      { ask: [4,5,6], hit: 1, blow: 2 }
+      { ask: [1, 2, 3], hit: 2, blow: 1 },
+      { ask: [4, 5, 6], hit: 1, blow: 2 },
     ];
     render(<HitAndBlowAskTable history={history} />);
     expect(screen.getByText("123")).toBeInTheDocument();

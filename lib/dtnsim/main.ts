@@ -19,7 +19,7 @@ export default class Main {
 
   constructor(
     canvas: HTMLCanvasElement | null,
-    { node = 20, agent = 3, range = 10 } = {}
+    { node = 20, agent = 3, range = 10 } = {},
   ) {
     if (canvas == null) {
       throw new Error(`canvas: ${canvas}`);
@@ -95,7 +95,7 @@ export default class Main {
       this.width,
       this.height,
       this.nodes,
-      this.links
+      this.links,
     );
 
     this.information = new Information(this.context, this.width, this.height);
@@ -103,7 +103,7 @@ export default class Main {
     // init agents
     const agentSettings = { range: range };
     this.agents = [...Array(agent).keys()].map(
-      () => new Agent(this.context, agentSettings)
+      () => new Agent(this.context, agentSettings),
     );
 
     this.agents.forEach((_, index) => {

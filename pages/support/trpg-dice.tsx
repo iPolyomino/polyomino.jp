@@ -18,10 +18,10 @@ const TrpgDice: NextPage = () => {
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <TRPG />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Footer />
           </Grid>
         </Grid>

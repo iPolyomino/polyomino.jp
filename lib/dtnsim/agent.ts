@@ -15,7 +15,7 @@ export default class Agent {
 
   constructor(
     context: SimulatorCanvas,
-    { range = 40, algorithm = RandomSelect } = {}
+    { range = 40, algorithm = RandomSelect } = {},
   ) {
     this.context = context;
     this.range = range;
@@ -44,7 +44,7 @@ export default class Agent {
     const yRemainingCoordinate =
       this.targetNode.coordinate.y - this.coordinate.y;
     const distance = Math.sqrt(
-      Math.pow(xRemainingCoordinate, 2) + Math.pow(yRemainingCoordinate, 2)
+      Math.pow(xRemainingCoordinate, 2) + Math.pow(yRemainingCoordinate, 2),
     );
 
     if (distance < 1) {
@@ -88,7 +88,7 @@ export default class Agent {
       this.coordinate.y,
       this.range,
       0,
-      Math.PI * 2
+      Math.PI * 2,
     );
     this.context.fill();
 
@@ -103,7 +103,7 @@ export default class Agent {
       this.coordinate.y,
       this.size,
       0,
-      Math.PI * 2
+      Math.PI * 2,
     );
     this.context.fill();
   }

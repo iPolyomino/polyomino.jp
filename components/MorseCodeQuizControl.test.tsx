@@ -9,7 +9,7 @@ describe("MorseCodeQuizControl", () => {
         ditClick={jest.fn()}
         dahClick={jest.fn()}
         answer={jest.fn()}
-      />
+      />,
     );
   });
 
@@ -20,9 +20,9 @@ describe("MorseCodeQuizControl", () => {
         ditClick={jest.fn()}
         dahClick={jest.fn()}
         answer={jest.fn()}
-      />
+      />,
     );
-    
+
     expect(screen.getAllByText("不正解")).toHaveLength(2); // モバイル用とデスクトップ用の2箇所
   });
 
@@ -33,9 +33,9 @@ describe("MorseCodeQuizControl", () => {
         ditClick={jest.fn()}
         dahClick={jest.fn()}
         answer={jest.fn()}
-      />
+      />,
     );
-    
+
     expect(screen.getAllByText("正解")).toHaveLength(2); // モバイル用とデスクトップ用の2箇所
   });
 
@@ -46,9 +46,9 @@ describe("MorseCodeQuizControl", () => {
         ditClick={jest.fn()}
         dahClick={jest.fn()}
         answer={jest.fn()}
-      />
+      />,
     );
-    
+
     expect(screen.queryByText("正解")).not.toBeInTheDocument();
     expect(screen.queryByText("不正解")).not.toBeInTheDocument();
   });
@@ -57,23 +57,23 @@ describe("MorseCodeQuizControl", () => {
     const ditClick = jest.fn();
     const dahClick = jest.fn();
     const answer = jest.fn();
-    
+
     render(
       <MorseCodeQuizControl
         isCorrect={null}
         ditClick={ditClick}
         dahClick={dahClick}
         answer={answer}
-      />
+      />,
     );
-    
+
     const buttons = screen.getAllByRole("button");
     fireEvent.click(buttons[0]); // ditボタン
     expect(ditClick).toHaveBeenCalledTimes(1);
-    
+
     fireEvent.click(buttons[1]); // dahボタン
     expect(dahClick).toHaveBeenCalledTimes(1);
-    
+
     fireEvent.click(buttons[2]); // OKボタン
     expect(answer).toHaveBeenCalledTimes(1);
   });
@@ -85,9 +85,9 @@ describe("MorseCodeQuizControl", () => {
         ditClick={jest.fn()}
         dahClick={jest.fn()}
         answer={jest.fn()}
-      />
+      />,
     );
-    
+
     const buttons = screen.getAllByRole("button");
     expect(buttons[0]).toBeDisabled(); // ditボタン
     expect(buttons[1]).toBeDisabled(); // dahボタン

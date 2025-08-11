@@ -17,8 +17,8 @@ const Background = () => {
 
     setColorlist(
       [...Array(100)].map(
-        () => colors[Math.floor(Math.random() * colors.length)]
-      )
+        () => colors[Math.floor(Math.random() * colors.length)],
+      ),
     );
   }, []);
 

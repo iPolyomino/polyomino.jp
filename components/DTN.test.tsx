@@ -4,7 +4,7 @@ import DTN from "./DTN";
 describe("DTN", () => {
   beforeAll(() => {
     // canvas の getContext を型安全にモック
-    Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+    Object.defineProperty(HTMLCanvasElement.prototype, "getContext", {
       value: () => ({
         clearRect: jest.fn(),
         fillRect: jest.fn(),

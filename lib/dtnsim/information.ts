@@ -43,7 +43,7 @@ export default class Information {
         infoText[i],
         this.width - infoWidth / 2,
         infoHeight / infoText.length + lineHight * (i - 0.5),
-        infoWidth
+        infoWidth,
       );
     }
   }

@@ -27,7 +27,6 @@ export const getStaticProps = async () => {
 };
 
 const AboutMe: NextPage<Props> = ({ aboutmeHTML, historyHTML, lifeHTML }) => {
-
   return (
     <>
       <Head>
@@ -38,16 +37,16 @@ const AboutMe: NextPage<Props> = ({ aboutmeHTML, historyHTML, lifeHTML }) => {
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <RawArticle html={aboutmeHTML} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <RawArticle html={historyHTML} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <RawArticle html={lifeHTML} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Footer />
           </Grid>
         </Grid>

@@ -8,7 +8,7 @@ describe("MorseCodeQuizMain", () => {
         index={0}
         code=""
         clearCode={() => {}}
-      />
+      />,
     );
   });
 });

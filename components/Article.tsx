@@ -66,7 +66,7 @@ const Article = (props: Props) => {
           <Grid container spacing={1}>
             {data.sentence.links &&
               data.sentence.links.map((link, i) => (
-                <Grid item key={i}>
+                <Grid key={i}>
                   <Links link={link} />
                 </Grid>
               ))}
