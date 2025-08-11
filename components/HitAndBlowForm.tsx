@@ -51,16 +51,16 @@ const HitAndBlowForm = ({ digit, addHistory }: {
     <>
       <Typography variant="h5" sx={{ my: 1 }}>Question Result</Typography>
       <Grid container spacing={{ xs: 3 }}>
-        <Grid item>
+        <Grid>
           <TextField label="number" value={askednumber} onChange={e => setAskednumber(e.target.value)} />
         </Grid>
-        <Grid item>
+        <Grid>
           <TextField label="hit" value={hit} onChange={e => setHit(e.target.value)} />
         </Grid>
-        <Grid item>
+        <Grid>
           <TextField label="blow" value={blow} onChange={e => setBlow(e.target.value)} />
         </Grid>
-        <Grid item my={1}>
+        <Grid my={1}>
           <Button variant="contained" onClick={handleApply}>Apply</Button>
         </Grid>
       </Grid>

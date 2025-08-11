@@ -35,20 +35,20 @@ const Home: NextPage = () => {
           </Box>
         </Grid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Article data={aboutme} />
           </Grid>
           {articles.map((data: ArticleData, i) => (
-            <Grid item xs={12} md={6} key={i}>
+            <Grid size={{xs:12,md:6}} key={i}>
               <Article data={data} />
             </Grid>
           ))}
           {appendix.map((data, i) => (
-            <Grid item xs={12} key={i}>
+            <Grid size={12} key={i}>
               <Article data={data} />
             </Grid>
           ))}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Footer />
           </Grid>
         </Grid>

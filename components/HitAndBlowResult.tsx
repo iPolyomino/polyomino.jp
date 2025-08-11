@@ -23,7 +23,7 @@ const HitAndBlowResult = ({ candidate, recommend }: { candidate: Candidate, reco
         {candidate.map((value, i) => {
           if (!displayall && i > threshold) return;
           return (
-            <Grid item key={value.join('')} sx={{ fontWeight: value === recommend ? 'bold' : 'normal' }}>
+            <Grid key={value.join('')} sx={{ fontWeight: value === recommend ? 'bold' : 'normal' }}>
               {value}
             </Grid>
           );

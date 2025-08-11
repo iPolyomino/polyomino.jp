@@ -34,11 +34,11 @@ const Blog: NextPage<Props> = ({ summary }) => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           {summary.map((article, i) => (
-            <Grid item xs={12} key={i}>
+            <Grid size={12} key={i}>
               <Article data={article} />
             </Grid>
           ))}
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Footer />
           </Grid>
         </Grid>

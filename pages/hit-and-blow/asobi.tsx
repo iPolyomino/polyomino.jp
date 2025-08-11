@@ -55,33 +55,33 @@ const Solver: NextPage = () => {
       <CenterrizedHorizontalGrid>
         <ContentsCard>
           <Grid container spacing={{ xs: 1 }} columns={12}>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "blue" }}>0</NumberColorSample>
             </Grid>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "red" }}>1</NumberColorSample>
             </Grid>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "green" }}>2</NumberColorSample>
             </Grid>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "yellow", color: "black" }}>3</NumberColorSample>
             </Grid>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "purple" }}>4</NumberColorSample>
             </Grid>
-            <Grid item xs={2} >
+            <Grid size={2} >
               <NumberColorSample style={{ backgroundColor: "gray" }}>5</NumberColorSample>
             </Grid>
           </Grid>
           <Grid container spacing={{ xs: 3 }} columns={12}>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <HitAndBlowAskTable history={history} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <HitAndBlowForm digit={digit} addHistory={addHistory} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={12}>
               <HitAndBlowResult candidate={candidate} recommend={recommend} />
             </Grid>
           </Grid>

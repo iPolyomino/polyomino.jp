@@ -37,12 +37,12 @@ const MorseCodeQuizMain = ({ isCorrect, index, code, clearCode }: Props) => {
       <Typography variant="h4">{morse[index].letter}</Typography>
       <p>{morse[index].phonetic}</p>
       <Grid container spacing={1} className={color()}>
-        <Grid item xs={9}>
+        <Grid size={9}>
           <Box className={styles.code_box}>
             <span className={styles.code}>{encode(code)}</span>
           </Box>
         </Grid>
-        <Grid item xs={3} my={3}>
+        <Grid size={3} my={3}>
           <Button
             onClick={clearCode}
             color="error"
