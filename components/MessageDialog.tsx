@@ -6,7 +6,15 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 
-const MessageDialog = ({ message, isOpen, handleClose }: { message: string, isOpen: boolean, handleClose: () => void }) => {
+const MessageDialog = ({
+  message,
+  isOpen,
+  handleClose,
+}: {
+  message: string;
+  isOpen: boolean;
+  handleClose: () => void;
+}) => {
   return (
     <Dialog
       open={isOpen}
@@ -14,15 +22,13 @@ const MessageDialog = ({ message, isOpen, handleClose }: { message: string, isOp
       aria-describedby="dialog-description"
     >
       <DialogContent>
-        <DialogContentText id="dialog-description">
-          {message}
-        </DialogContentText>
+        <DialogContentText id="dialog-description">{message}</DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Close</Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};
 
 export default MessageDialog;

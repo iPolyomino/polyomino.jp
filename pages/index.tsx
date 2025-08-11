@@ -39,7 +39,7 @@ const Home: NextPage = () => {
             <Article data={aboutme} />
           </Grid>
           {articles.map((data: ArticleData, i) => (
-            <Grid size={{xs:12,md:6}} key={i}>
+            <Grid size={{ xs: 12, md: 6 }} key={i}>
               <Article data={data} />
             </Grid>
           ))}

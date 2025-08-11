@@ -17,5 +17,8 @@ export default [
       "@next/next": nextPlugin,
       prettier: eslintPluginPrettier,
     },
+    rules: {
+      "prettier/prettier": "error",
+    },
   },
 ];

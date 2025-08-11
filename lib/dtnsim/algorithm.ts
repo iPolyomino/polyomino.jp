@@ -13,7 +13,7 @@ export const RingLargeIdSelect = (node: Node, maxId: number) => {
   if (node.id == 0 || node.id === maxId) {
     // select smallest id node
     return node.connectedNode.reduce((pre, cur) =>
-      pre.id < cur.id ? pre : cur
+      pre.id < cur.id ? pre : cur,
     );
   }
   return node.connectedNode.reduce((pre, cur) => (pre.id > cur.id ? pre : cur));

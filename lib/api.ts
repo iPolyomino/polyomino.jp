@@ -46,7 +46,7 @@ export const blogSummary = async () => {
   const files = await fsp.readdir(dirPath);
   const sortedFiles = files.sort().reverse();
   const asyncArticles = sortedFiles.map(async (fileName) =>
-    fileToArticle(dirPath, fileName)
+    fileToArticle(dirPath, fileName),
   );
   const articles = await Promise.all(asyncArticles);
 
@@ -58,7 +58,7 @@ export const getBlog = (fileName: string) => {
     process.cwd(),
     "contents",
     "posts",
-    `${fileName}.md`
+    `${fileName}.md`,
   );
 
   const { data, content } = matter.read(filePath);

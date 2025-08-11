@@ -27,7 +27,6 @@ export const getStaticProps = async () => {
 };
 
 const AboutMe: NextPage<Props> = ({ aboutmeHTML, historyHTML, lifeHTML }) => {
-
   return (
     <>
       <Head>

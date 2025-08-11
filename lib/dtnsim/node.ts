@@ -36,7 +36,7 @@ export default class Node {
       this.coordinate.y,
       this.size,
       0,
-      Math.PI * 2
+      Math.PI * 2,
     );
     this.context.fill();
   }

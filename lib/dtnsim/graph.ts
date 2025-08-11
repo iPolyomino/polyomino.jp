@@ -14,7 +14,7 @@ export default class Graph {
     width = 800,
     height = 600,
     nodes: Node[],
-    links: Link[]
+    links: Link[],
   ) {
     if (nodes == null || nodes.length < 2) {
       throw new Error("cannot create graph by single node");

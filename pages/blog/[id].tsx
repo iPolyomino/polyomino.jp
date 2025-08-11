@@ -12,7 +12,7 @@ import { getPosts, getBlog } from "@/lib/api";
 import { markdownToHTML } from "@/lib/markdown";
 
 interface Props {
-  data: { title: string; description: string; keywords: string; date: string; };
+  data: { title: string; description: string; keywords: string; date: string };
   html: string;
 }
 

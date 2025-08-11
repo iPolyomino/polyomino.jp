@@ -8,7 +8,7 @@ export default class Path {
   constructor(
     context: SimulatorCanvas,
     source: Coordinate,
-    target: Coordinate
+    target: Coordinate,
   ) {
     this.context = context;
     this.source = source;
