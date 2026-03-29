@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p ${PORT:-8080}",
-    "lint": "eslint './**/*.{ts,tsx}'",
-    "lint-fix": "eslint './**/*.{ts,tsx}' --fix",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "prepare": "git config --local core.hooksPath .githooks"
