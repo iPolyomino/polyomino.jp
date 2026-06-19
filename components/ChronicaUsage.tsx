@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 const ChronicaUsage = () => {
   return (
     <ContentsCard>
+      <h1>使い方</h1>
       <section>
         <h2>1. まずは人物を登録します</h2>
 
