@@ -22,3 +22,29 @@ nav a {
 main {
   position: relative;
 }
+
+address a {
+  word-break: break-all;
+}
+
+article pre {
+  padding: 1em;
+  border-radius: 4px;
+  background-color: #f2f4f7;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+article code {
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  background-color: #f2f4f7;
+  color: #b42318;
+  white-space: pre;
+}
+
+article pre code {
+  padding: 0;
+  background-color: transparent;
+}
