@@ -10,7 +10,9 @@
     "lint-fix": "eslint . --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "prepare": "git config --local core.hooksPath .githooks"
+    "prepare": "git config --local core.hooksPath .githooks",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -43,6 +45,7 @@
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.57.2",
+    "wrangler": "^4.103.0"
   }
 }
