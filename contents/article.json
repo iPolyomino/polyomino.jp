@@ -2,6 +2,78 @@
   "articles": [
     {
       "media": {
+        "webp": "trpg_dice.webp",
+        "png": "trpg_dice.png",
+        "alt": "電卓風のボタン配置がされている乱数発生装置のスクリーンショット。iPhoneアプリ TRPG DICE のスクリーンショット。"
+      },
+      "title": "TRPG DICE",
+      "sentence": {
+        "text": "TRPGでよく利用する 1D6 や 1D100 といったサイコロを振った結果を素早く出力ができるアプリです。2D6 などの複数のダイスを振った時、それぞれの出目も確認できます。出た目の履歴を遡って確認することができます。初めて作ったiPhoneアプリです。",
+        "links": [
+          {
+            "name": "TRPG DICE",
+            "url": "https://apps.apple.com/jp/app/trpg-dice/id1096999521"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "chronica.webp",
+        "jpg": "chronica.jpg",
+        "alt": "ライフイベント計画・記録アプリChronica(クロニカ)のスクリーンショット。ライフイベントとして、サンプルユーザ陽菜の誕生日があと 55日と表示されている。"
+      },
+      "title": "Chronica (クロニカ)",
+      "sentence": {
+        "text": "誕生日、還暦、小学校入学などの予定を自動的に生成し、確認できるアプリです。登録されたイベントは前日に通知できます。また、記念日を写真とともに登録することができ、今までのイベントを振り返ることもできます。",
+        "links": [
+          {
+            "name": "Chronica",
+            "url": "https://apps.apple.com/jp/app/chronica/id6780451967"
+          },
+          {
+            "name": "使い方",
+            "url": "/support/chronica-usage"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "text2unicode.webp",
+        "jpg": "text2unicode.jpg",
+        "alt": "text2unicode アプリのスクリーンショット。文字や絵文字から Unicode に変換された様子が写っている。"
+      },
+      "title": "Text2Unicode",
+      "sentence": {
+        "text": "入力した文字列の Unicode を表示できるアプリです。プログラミングをする際など、Unicode が気になったとき、手軽に調べることができます。",
+        "links": [
+          {
+            "name": "Text2Unicode",
+            "url": "https://apps.apple.com/jp/app/text2unicode/id6455461571"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
+        "webp": "rhythmorse.webp",
+        "jpg": "rhythmorse.jpg",
+        "alt": "Rhythmorse アプリ配布をしている Play ストアのスクリーンショット"
+      },
+      "title": "Rhythmorse (リズモールス)",
+      "sentence": {
+        "text": "リズムゲーム感覚でモールス信号を練習することができるアプリです。練習する文字は自分で設定できるので、自分のコールサインを練習するのも楽しいと思います。",
+        "links": [
+          {
+            "name": "Rhythmorse",
+            "url": "https://play.google.com/store/apps/details?id=jp.polyomino.rhythmorse"
+          }
+        ]
+      }
+    },
+    {
+      "media": {
         "webp": "oz.webp",
         "jpg": "oz.jpg",
         "alt": "2005年を彷彿とさせるチャットアプリケーションのスクリーンショット"
@@ -258,57 +330,6 @@
     },
     {
       "media": {
-        "webp": "trpg_dice.webp",
-        "png": "trpg_dice.png",
-        "alt": "電卓風のボタン配置がされている乱数発生装置のスクリーンショット"
-      },
-      "title": "TRPG DICE",
-      "sentence": {
-        "text": "TRPGでよく利用する 1D6 や 1D100 といった値を素早く出力ができるアプリです。初めて作ったiPhoneアプリです。",
-        "links": [
-          {
-            "name": "TRPG DICE",
-            "url": "https://apps.apple.com/jp/app/trpg-dice/id1096999521"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "text2unicode.webp",
-        "jpg": "text2unicode.jpg",
-        "alt": "text2unicode アプリのスクリーンショット。文字や絵文字から Unicode に変換された様子が写っている。"
-      },
-      "title": "Text2Unicode",
-      "sentence": {
-        "text": "入力した文字列の Unicode を表示できるアプリです。プログラミングをする際など、Unicode が気になったとき、手軽に調べることができます。",
-        "links": [
-          {
-            "name": "Text2Unicode",
-            "url": "https://apps.apple.com/jp/app/text2unicode/id6455461571"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
-        "webp": "rhythmorse.webp",
-        "jpg": "rhythmorse.jpg",
-        "alt": "Rhythmorse アプリ配布をしている Play ストアのスクリーンショット"
-      },
-      "title": "Rhythmorse",
-      "sentence": {
-        "text": "リズムゲーム感覚でモールス信号を練習することができるアプリです。練習する文字は自分で設定できるので、自分のコールサインを練習するのも楽しいと思います。",
-        "links": [
-          {
-            "name": "Rhythmorse",
-            "url": "https://play.google.com/store/apps/details?id=jp.polyomino.rhythmorse"
-          }
-        ]
-      }
-    },
-    {
-      "media": {
         "webp": "chocolategame.webp",
         "jpg": "chocolategame.jpg",
         "alt": "チョコレート風のコンテンツが表示されたウェブサイトのスクリーンショット"
@@ -339,18 +360,6 @@
             "url": "https://chrome.google.com/webstore/detail/%E3%83%97%E3%83%AD%E7%94%9F%E3%81%A1%E3%82%83%E3%82%93%E3%81%AE%E6%99%82%E9%96%93%EF%BC%81/ibjgndcedoonbjahcnhnongfgfelkadm"
           }
         ]
-      }
-    },
-    {
-      "media": {
-        "webp": "projection_mapping.webp",
-        "jpg": "projection_mapping.jpg",
-        "alt": "時計台を中央に、雪が降ってきている画像。アプリケーションのスクリーンショット"
-      },
-      "title": "プロジェクションマッピング",
-      "sentence": {
-        "text": "プロジェクションマッピングにおけるインタラクティブパートの作成を行いました。A-Frameを用いたVRゲームです。スマートフォンのジャイロセンサを有効にしてお楽しみください。",
-        "links": []
       }
     },
     {
