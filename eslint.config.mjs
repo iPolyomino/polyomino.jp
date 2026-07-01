@@ -10,7 +10,7 @@ import globals from "globals";
 export default [
   {
     ignores: [
-      "out/*",
+      ".next/*",
       "node_modules/*",
       "next-env.d.ts",
       "public/sw.js",
