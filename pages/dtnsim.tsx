@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
@@ -13,22 +13,12 @@ import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 
 import { GraphSettings } from "@/types/GraphSettings";
 
-type DTNHandle = {
-  initMain: () => void;
-};
-
 const DtnSimulator: NextPage = () => {
   const defaultSettings = { node: 20, agent: 10, range: 40 };
   const [node, setNode] = useState(defaultSettings.node);
   const [agent, setAgent] = useState(defaultSettings.agent);
   const [range, setRange] = useState(defaultSettings.range);
   const [graph, setGraph] = useState<GraphSettings>(defaultSettings);
-
-  const dtnRef = useRef<DTNHandle>(null);
-
-  useEffect(() => {
-    dtnRef.current?.initMain();
-  }, [graph]);
 
   const applySettings = () => {
     setGraph({
@@ -49,7 +39,7 @@ const DtnSimulator: NextPage = () => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid size={{ xs: 12, md: 8 }}>
-            <DTN settings={graph} ref={dtnRef} />
+            <DTN settings={graph} />
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>
             <ContentsCard>

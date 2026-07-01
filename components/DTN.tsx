@@ -3,7 +3,7 @@ import React, {
   useRef,
   useEffect,
   useImperativeHandle,
-  useState,
+  useCallback,
 } from "react";
 
 import Main from "@/lib/dtnsim/main";
@@ -14,25 +14,29 @@ interface Props {
 }
 
 const DTN = forwardRef((props: Props, ref) => {
-  const canvas = useRef(null);
+  const canvas = useRef<HTMLCanvasElement | null>(null);
+  const main = useRef<Main | null>(null);
 
-  const [main, setMain] = useState<Main | null>();
+  const initMain = useCallback(() => {
+    main.current?.stopAnimation();
+    try {
+      main.current = new Main(canvas.current, props.settings);
+    } catch (error) {
+      alert(error);
+    }
+  }, [props.settings]);
 
   useEffect(() => {
-    setMain(new Main(canvas.current, props.settings));
-  }, []);
+    initMain();
+
+    return () => {
+      main.current?.stopAnimation();
+      main.current = null;
+    };
+  }, [initMain]);
 
   useImperativeHandle(ref, () => ({
-    initMain() {
-      if (main != null) {
-        main.stopAnimation();
-      }
-      try {
-        setMain(new Main(canvas.current, props.settings));
-      } catch (error) {
-        alert(error);
-      }
-    },
+    initMain,
   }));
 
   return (
