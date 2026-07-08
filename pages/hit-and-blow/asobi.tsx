@@ -63,18 +63,37 @@ const selectGreedyMinimaxRecommend = (
 
   for (const guess of guesses) {
     const hitblow: Record<string, number> = {};
+    let maxBranchSize = 0;
+    let sumSquares = 0;
+    let pruned = false;
 
-    for (const candidate of candidates) {
+    for (let i = 0; i < candidates.length; i++) {
+      const candidate = candidates[i];
       const { hit, blow } = countHitBlow(candidate, guess);
       const key = `${hit}hit${blow}blow`;
-      hitblow[key] = (hitblow[key] ?? 0) + 1;
+      const nextBranchSize = (hitblow[key] ?? 0) + 1;
+      hitblow[key] = nextBranchSize;
+      maxBranchSize = Math.max(maxBranchSize, nextBranchSize);
+      sumSquares += nextBranchSize * nextBranchSize - (nextBranchSize - 1) ** 2;
+
+      if (
+        best !== undefined &&
+        (maxBranchSize > best.max ||
+          (maxBranchSize === best.max &&
+            sumSquares >= bestSumSquares &&
+            i < candidates.length - 1))
+      ) {
+        pruned = true;
+        break;
+      }
     }
+
+    if (pruned) continue;
 
     const branchSizes = Object.values(hitblow);
     if (branchSizes.length <= 1) continue;
 
-    const max = Math.max(...branchSizes);
-    const sumSquares = branchSizes.reduce((sum, size) => sum + size * size, 0);
+    const max = maxBranchSize;
     const branchCount = branchSizes.length;
 
     if (
@@ -121,12 +140,10 @@ const Solver: NextPage = () => {
 
   const addHistory = (newHistory: History) => {
     setCandidate(
-      candidate
-        .filter((cand) => HitCounter(cand, newHistory.ask) === newHistory.hit)
-        .filter(
-          (cand) =>
-            BlowCounterWithDuplicates(cand, newHistory.ask) === newHistory.blow,
-        ),
+      candidate.filter((cand) => {
+        const { hit, blow } = countHitBlow(cand, newHistory.ask);
+        return hit === newHistory.hit && blow === newHistory.blow;
+      }),
     );
     setHistory([...history, newHistory]);
   };
