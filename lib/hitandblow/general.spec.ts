@@ -1,4 +1,10 @@
-import { HitCounter, BlowCounter, InitializeAnswer } from "./general";
+import {
+  HitCounter,
+  BlowCounter,
+  BlowCounterWithDuplicates,
+  InitializeAnswer,
+  InitializeAnswerWithDuplicates,
+} from "./general";
 import { describe, expect, test } from "@jest/globals";
 
 describe("hit counter test", () => {
@@ -32,6 +38,20 @@ describe("blow counter test", () => {
   });
 });
 
+describe("blow counter with duplicates test", () => {
+  test("same number is matched only once", () => {
+    expect(BlowCounterWithDuplicates([1, 1, 1], [1, 2, 3])).toBe(0);
+    expect(BlowCounterWithDuplicates([2, 1, 2], [1, 2, 3])).toBe(2);
+    expect(BlowCounterWithDuplicates([1, 2, 2], [1, 2, 3])).toBe(0);
+  });
+
+  test("duplicates can produce blows when positions differ", () => {
+    expect(BlowCounterWithDuplicates([1, 1, 2, 2], [2, 2, 1, 1])).toBe(4);
+    expect(BlowCounterWithDuplicates([1, 1, 2, 2], [1, 2, 1, 2])).toBe(2);
+    expect(BlowCounterWithDuplicates([0, 0, 0, 1], [0, 1, 1, 1])).toBe(0);
+  });
+});
+
 describe("initialize answer test", () => {
   test("generated length test", () => {
     // 3 permutations of 10 different numbers
@@ -47,5 +67,18 @@ describe("initialize answer test", () => {
     expect([...new Set(answers4)].length).toBe(answers4.length);
     const answers5 = InitializeAnswer(5);
     expect([...new Set(answers5)].length).toBe(answers5.length);
+  });
+});
+
+describe("initialize answer with duplicates test", () => {
+  test("generated length test", () => {
+    expect(InitializeAnswerWithDuplicates(3).length).toBe(10 ** 3);
+    expect(InitializeAnswerWithDuplicates(4, 6).length).toBe(6 ** 4);
+  });
+
+  test("generated number can contain same number", () => {
+    const answers = InitializeAnswerWithDuplicates(4, 6);
+    expect(answers).toContainEqual([0, 0, 0, 0]);
+    expect(answers).toContainEqual([5, 5, 5, 5]);
   });
 });
