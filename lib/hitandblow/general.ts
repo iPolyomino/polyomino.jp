@@ -15,6 +15,21 @@ export const Permutations = (nums: number[], len: number) => {
   return result;
 };
 
+export const Products = (nums: number[], len: number) => {
+  const result: number[][] = [];
+  const product = (queue: number[] = []) => {
+    if (queue.length === len) {
+      result.push(queue);
+    } else {
+      for (const num of nums) {
+        product(queue.concat(num));
+      }
+    }
+  };
+  product();
+  return result;
+};
+
 export const HitCounter = (a: number[], b: number[]) => {
   if (a.length !== b.length) {
     throw new Error("numbers to be compared should be of equal length");
@@ -44,8 +59,33 @@ export const BlowCounter = (a: number[], b: number[]) => {
   return ans;
 };
 
+export const BlowCounterWithDuplicates = (a: number[], b: number[]) => {
+  if (a.length !== b.length) {
+    throw new Error("numbers to be compared should be of equal length");
+  }
+  const hit = HitCounter(a, b);
+  const aCounts = new Map<number, number>();
+  const bCounts = new Map<number, number>();
+
+  for (const value of a) {
+    aCounts.set(value, (aCounts.get(value) ?? 0) + 1);
+  }
+  for (const value of b) {
+    bCounts.set(value, (bCounts.get(value) ?? 0) + 1);
+  }
+
+  let matched = 0;
+  for (const [value, aCount] of aCounts) {
+    matched += Math.min(aCount, bCounts.get(value) ?? 0);
+  }
+  return matched - hit;
+};
+
 export const InitializeAnswer = (len: number, variety = 10) =>
   Permutations([...Array(variety).keys()], len);
+
+export const InitializeAnswerWithDuplicates = (len: number, variety = 10) =>
+  Products([...Array(variety).keys()], len);
 
 export const SelectRecommend = (nums: number[][]) => {
   interface HitBlow {
