@@ -48,6 +48,9 @@ const HitAndBlowResult = ({
           />
         </FormGroup>
       )}
+      {recommend !== undefined && (
+        <Typography>recommend: {recommend.join("")}</Typography>
+      )}
       <Typography>total candidates: {candidate.length}</Typography>
     </>
   );

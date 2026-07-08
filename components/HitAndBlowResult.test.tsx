@@ -29,6 +29,7 @@ describe("HitAndBlowResult", () => {
     expect(gridItems[1].textContent).toContain("6");
 
     expect(screen.getByText(/total candidates: 2/)).toBeInTheDocument();
+    expect(screen.getByText(/recommend: 123/)).toBeInTheDocument();
   });
 
   it("候補数が閾値超ならスイッチで全表示できる", () => {
