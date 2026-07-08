@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
@@ -121,13 +121,11 @@ const Solver: NextPage = () => {
   const [digit, setDigit] = useState<number>(3);
   const allGuesses = useMemo(() => InitializeAnswer(digit), [digit]);
   const [history, setHistory] = useState<History[]>([]);
-  const [candidate, setCandidate] = useState<number[][]>(allGuesses);
+  const [candidate, setCandidate] = useState<number[][]>(() =>
+    InitializeAnswer(3),
+  );
   const [message, setMessage] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    setCandidate(allGuesses);
-  }, [allGuesses]);
 
   const recommend = useMemo(
     () => selectGreedyMinimaxRecommend(candidate, allGuesses)?.recommend,
@@ -136,7 +134,7 @@ const Solver: NextPage = () => {
 
   const handleNumberLength = (
     _: React.MouseEvent<HTMLElement>,
-    newNumberLength: number,
+    newNumberLength: number | null,
   ) => {
     if (newNumberLength === null) return;
     if (history.length !== 0) {
@@ -147,16 +145,17 @@ const Solver: NextPage = () => {
       return;
     }
     setDigit(newNumberLength);
+    setCandidate(InitializeAnswer(newNumberLength));
   };
 
   const addHistory = (newHistory: History) => {
-    setCandidate(
-      candidate.filter((cand) => {
+    setCandidate((currentCandidate) =>
+      currentCandidate.filter((cand) => {
         const { hit, blow } = countHitBlow(cand, newHistory.ask);
         return hit === newHistory.hit && blow === newHistory.blow;
       }),
     );
-    setHistory([...history, newHistory]);
+    setHistory((currentHistory) => [...currentHistory, newHistory]);
   };
 
   return (
