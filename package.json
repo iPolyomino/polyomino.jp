@@ -21,7 +21,7 @@
     "babel-plugin-superjson-next": "^0.4.5",
     "d3-voronoi": "^1.1.4",
     "gray-matter": "^4.0.3",
-    "next": "15.5.19",
+    "next": "15.5.22",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
@@ -29,13 +29,13 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.29.7",
-    "@eslint/js": "^9.39.4",
-    "@testing-library/jest-dom": "^6.9.1",
+    "@eslint/js": "^9.39.5",
+    "@testing-library/jest-dom": "^6.10.0",
     "@testing-library/react": "^16.3.2",
     "@types/d3-voronoi": "^1.1.12",
     "@types/jest": "^30.0.0",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "15.5.19",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "15.5.22",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -43,7 +43,7 @@
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.62.1",
-    "wrangler": "^4.106.0"
+    "typescript-eslint": "^8.65.0",
+    "wrangler": "^4.114.0"
   }
 }
