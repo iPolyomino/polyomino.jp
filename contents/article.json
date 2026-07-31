@@ -235,7 +235,7 @@
         "links": [
           {
             "name": "lsnl",
-            "url": "https://lsnl.polyomino.jp/"
+            "url": "/lsnl"
           },
           {
             "name": "ソースコード",

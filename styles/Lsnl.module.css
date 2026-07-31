@@ -1,0 +1,64 @@
+.root {
+  min-height: 100vh;
+  background: #000;
+  color: #0f0;
+  font-family: "Courier Prime", ui-monospace, "SFMono-Regular",
+  Menlo, Consolas, "Noto Sans Mono CJK JP", monospace;
+  font-size: 1.5rem;
+  position: relative;
+  isolation: isolate;
+}
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.intro h1 {
+  margin: 32px;
+  font-size: min(4rem, 15vw);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.contents {
+  width: 100%;
+  padding: 32px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contents main {
+  width: 80vw;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 16px;
+  background: rgb(10 10 10 / 80%);
+}
+
+.contents article {
+  margin: 10vh 16px;
+}
+
+.contents h2 {
+  margin: 0;
+  padding: 16px 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.contents p {
+  margin: 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .root { font-size: 1rem; }
+  .contents main { width: 90vw; }
+  .contents article { margin-inline: 0; }
+  .contents p { margin-inline: 8px; }
+}

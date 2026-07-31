@@ -18,6 +18,9 @@
     "@mui/icons-material": "^7.3.11",
     "@mui/material": "^7.3.11",
     "@react-hook/event": "^1.2.6",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "babel-plugin-superjson-next": "^0.4.5",
     "d3-voronoi": "^1.1.4",
     "gray-matter": "^4.0.3",
@@ -25,7 +28,8 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",
-    "strip-markdown": "^6.0.0"
+    "strip-markdown": "^6.0.0",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.29.7",
