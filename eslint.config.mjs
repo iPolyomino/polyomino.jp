@@ -11,6 +11,7 @@ export default [
   {
     ignores: [
       ".next/*",
+      "out/*",
       "node_modules/*",
       "next-env.d.ts",
       "public/sw.js",
