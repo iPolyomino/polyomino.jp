@@ -2,9 +2,9 @@ import Agent from "./agent";
 import Graph from "./graph";
 import Information from "./information";
 import Node from "./node";
-import { SimulatorCanvas, Link, VoronoiLink } from "@/types/Simulator";
+import { SimulatorCanvas, Link } from "@/types/Simulator";
 
-import { voronoi as d3Voronoi } from "d3-voronoi";
+import { Delaunay } from "d3-delaunay";
 
 export default class Main {
   context: SimulatorCanvas;
@@ -49,31 +49,24 @@ export default class Main {
     });
 
     // init voronoi diagram
-    const voronoi = d3Voronoi<VoronoiLink>();
-    voronoi.extent([
-      [0, 0],
-      [this.width, this.height],
-    ]);
-    const data: Array<VoronoiLink> = this.nodes.map((node) => [
-      node.coordinate.x,
-      node.coordinate.y,
-      node.id,
-    ]);
-    const voronoiLinks = voronoi(data).links();
+    const delaunay = Delaunay.from(
+      this.nodes,
+      (node) => node.coordinate.x,
+      (node) => node.coordinate.y,
+    );
+    const voronoi = delaunay.voronoi([0, 0, this.width, this.height]);
 
-    this.links = voronoiLinks.map((link) => {
-      return {
-        source: {
-          x: link.source[0],
-          y: link.source[1],
-          id: link.source[2],
-        },
-        target: {
-          x: link.target[0],
-          y: link.target[1],
-          id: link.target[2],
-        },
-      };
+    this.links = [];
+    this.nodes.forEach((source, sourceIndex) => {
+      for (const targetIndex of voronoi.neighbors(sourceIndex)) {
+        // Each undirected edge is returned from both cells.
+        if (sourceIndex >= targetIndex) continue;
+        const target = this.nodes[targetIndex];
+        this.links.push({
+          source: { ...source.coordinate, id: source.id },
+          target: { ...target.coordinate, id: target.id },
+        });
+      }
     });
 
     // node connectionNode update

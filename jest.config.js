@@ -15,6 +15,6 @@ module.exports = {
     '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(@react-hook)/)'
+    '/node_modules/(?!(@react-hook|d3-delaunay|delaunator|robust-predicates)/)'
   ]
 };
