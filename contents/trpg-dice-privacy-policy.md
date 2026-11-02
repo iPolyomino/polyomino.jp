@@ -2,7 +2,7 @@
 
 施行日：2026年11月1日
 
-Polyomino（以下「開発者」）は、iOSアプリ「Dice」（以下「本アプリ」）における利用者情報を、以下のとおり取り扱います。
+Polyomino（以下「開発者」）は、iOSアプリ「TRPG Dice」（以下「本アプリ」）における利用者情報を、以下のとおり取り扱います。
 
 ## 1. 端末内に保存する情報
 
@@ -60,7 +60,7 @@ GoogleおよびAppleが処理する情報の保存期間や削除方法につい
 
 Effective date: November 1, 2026
 
-Polyomino (“the Developer”) handles information relating to users of the iOS app “Dice” (“the App”) as described below.
+Polyomino (“the Developer”) handles information relating to users of the iOS app “TRPG Dice” (“the App”) as described below.
 
 ## 1. Information stored on your device
 
