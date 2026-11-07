@@ -1,12 +1,11 @@
-import ContentsCard from "@/components/ContentsCard";
+import RawArticle from "@/components/RawArticle";
 
-const Rythmorse = () => {
-  return (
-    <ContentsCard>
-      <h1>Rythmorse Privacy Policy</h1>
-      <p>This application does not collect user information.</p>
-    </ContentsCard>
-  );
+interface Props {
+  html: string;
+}
+
+const Rythmorse = ({ html }: Props) => {
+  return <RawArticle html={html} />;
 };
 
 export default Rythmorse;

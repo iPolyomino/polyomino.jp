@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
 
@@ -6,8 +6,19 @@ import NavigationBar from "@/components/NavigationBar";
 import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 import Rhythmorse from "@/components/Rhythmorse";
 import Footer from "@/components/Footer";
+import { getMarkdownFile } from "@/lib/api";
+import { markdownToHTML } from "@/lib/markdown";
 
-const RhythmorsePage: NextPage = () => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+export const getStaticProps = async () => {
+  const html = await markdownToHTML(
+    getMarkdownFile("rhythmorse-privacy-policy"),
+  );
+  return { props: { html } };
+};
+
+const RhythmorsePage: NextPage<Props> = ({ html }) => {
   return (
     <>
       <Head>
@@ -19,7 +30,7 @@ const RhythmorsePage: NextPage = () => {
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
           <Grid size={12}>
-            <Rhythmorse />
+            <Rhythmorse html={html} />
           </Grid>
           <Grid size={12}>
             <Footer />
