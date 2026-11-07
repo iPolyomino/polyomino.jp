@@ -38,6 +38,8 @@ You can manage, reset, or delete your advertising ID through the advertising pri
 
 Google also provides controls described in its privacy and advertising policies linked above.
 
+Where required, the app requests your advertising privacy choices through Google's consent form. When available for your region, you can review or change these choices under **Settings > Ad Privacy Settings**. The **Privacy Policy** link in Settings opens this policy.
+
 ## Data Retention and Deletion
 
 App preferences remain on your device until changed or removed. Practice tap records are held temporarily in app memory and reset during practice.
