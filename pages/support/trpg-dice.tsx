@@ -1,13 +1,16 @@
 import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Grid from "@mui/material/Grid";
 
 import NavigationBar from "@/components/NavigationBar";
 import CenterrizedHorizontalGrid from "@/components/CenterrizedHorizontalGrid";
 import TRPG from "@/components/TRPG";
 import Footer from "@/components/Footer";
+import ContentsCard from "@/components/ContentsCard";
 import { getMarkdownFile } from "@/lib/api";
 import { markdownToHTML } from "@/lib/markdown";
+import { trpgDiceLanguages } from "@/lib/trpgDiceLanguages";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -29,6 +32,29 @@ const TrpgDice: NextPage<Props> = ({ html }) => {
       <NavigationBar />
       <CenterrizedHorizontalGrid>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={12}>
+          <Grid size={12}>
+            <ContentsCard>
+              <nav aria-label="Privacy policy languages">
+                <ul>
+                  {trpgDiceLanguages.map(({ code, name }) => (
+                    <li key={code}>
+                      <Link
+                        href={
+                          code === "en"
+                            ? "/support/trpg-dice"
+                            : `/support/trpg-dice/${code}`
+                        }
+                        hrefLang={code}
+                        lang={code}
+                      >
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </ContentsCard>
+          </Grid>
           <Grid size={12}>
             <TRPG html={html} />
           </Grid>
