@@ -71,6 +71,8 @@ URLは `https://polyomino.jp` からの相対パス。
 | `/support/text2unicode` | `en` |
 | `/support/trpg-dice` | `en` |
 | `/support/trpg-dice/ja` | `ja` |
+| `/support/trpg-dice/ko` | `ko` |
+| `/support/trpg-dice/zh-Hans` | `zh-Hans` |
 | `/support/trpg-dice/zh-Hant` | `zh-Hant` |
 | `/support/trpg-dice/zh-Hant-HK` | `zh-Hant-HK` |
 | `/support/trpg-dice/de` | `de` |
