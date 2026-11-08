@@ -9,3 +9,11 @@ export const trpgDiceLanguages = [
   { code: "pt-BR", name: "Português (Brasil)" },
   { code: "it", name: "Italiano" },
 ] as const;
+
+export const getTrpgDiceLanguage = (pathname: string, language?: unknown) => {
+  if (pathname === "/support/trpg-dice") return "en";
+  if (pathname === "/support/trpg-dice/[language]") {
+    return trpgDiceLanguages.find(({ code }) => code === language)?.code;
+  }
+  return undefined;
+};

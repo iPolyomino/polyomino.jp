@@ -1,9 +1,12 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { getPageLanguage } from "@/lib/pageLanguage";
 
 class MyDocument extends Document {
   render() {
+    const { page, query } = this.props.__NEXT_DATA__;
+    const language = getPageLanguage(page, query.language);
     return (
-      <Html>
+      <Html lang={language}>
         <Head>
           <meta name="application-name" content="polyomino.jp" />
 
