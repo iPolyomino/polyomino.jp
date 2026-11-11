@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import ContentsCard from "@/components/ContentsCard";
 
@@ -13,16 +14,16 @@ const Ham = () => {
       <p>Amateur Third-Class Radio Operator in Japan</p>
       <h3>Transceiver</h3>
       <ul>
-        <li>
-          <Link
-            href="https://twitter.com/iPolyomino/status/1334088933076918273"
-            target="_blank"
-            rel="noopener"
-          >
-            FT1XD
-          </Link>
-        </li>
+        <li>FT1XD</li>
       </ul>
+      <Image
+        src="/images/ft1xd.jpg"
+        width={1024}
+        height={768}
+        alt="FT1XD transceiver"
+        sizes="(max-width: 600px) 100vw, 400px"
+        style={{ width: "100%", maxWidth: 400, height: "auto" }}
+      />
       <h3>Antenna</h3>
       <ul>
         <li>SRH789</li>
@@ -30,6 +31,20 @@ const Ham = () => {
         <li>SRH805S</li>
       </ul>
       <h2>Learning</h2>
+      <h3>Rhythmorse</h3>
+      <p>
+        Rhythmorse is an Android app that lets you practice Morse code like a
+        rhythm game. You can choose the characters you want to practice,
+        including those in your own call sign.
+      </p>
+      <p>
+        <Link href="https://play.google.com/store/apps/details?id=jp.polyomino.rhythmorse">
+          Google Play
+        </Link>
+        {" / "}
+        <Link href="/support/rhythmorse">Privacy Policy</Link>
+      </p>
+      <h3>Web tools</h3>
       <ul>
         <li>
           <Link href="/morse">Morse code</Link>

@@ -1,12 +1,12 @@
 import { getTrpgDiceLanguage } from "./trpgDiceLanguages";
 
 const englishPages = new Set([
+  "/hobby",
   "/404",
   "/_error",
   "/dtnsim",
   "/hit-and-blow/asobi",
   "/hit-and-blow/solver",
-  "/hobby",
   "/morse",
   "/morse/quiz",
   "/support/rhythmorse",
