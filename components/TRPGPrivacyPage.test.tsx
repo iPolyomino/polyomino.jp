@@ -17,11 +17,10 @@ const localizedHeadings = [
   ["ko", "개인정보 처리방침"],
   ["zh-Hans", "隐私政策"],
   ["zh-Hant", "隱私權政策"],
-  ["zh-Hant-HK", "私隱政策"],
   ["de", "Datenschutzerklärung"],
   ["fr", "Politique de confidentialité"],
   ["es", "Política de privacidad"],
-  ["pt-BR", "Política de Privacidade"],
+  ["pt", "Política de Privacidade"],
   ["it", "Informativa sulla privacy"],
 ];
 
@@ -53,7 +52,7 @@ describe("TRPG DICE privacy pages", () => {
     },
   );
 
-  it.each(["en", "unknown", "../en", undefined])(
+  it.each(["en", "pt-BR", "zh-Hant-HK", "unknown", "../en", undefined])(
     "rejects an unsupported localized route: %s",
     async (language) => {
       await expect(
@@ -70,7 +69,7 @@ describe("TRPG DICE privacy pages", () => {
       name: "Privacy policy languages",
     });
     const links = within(nav).getAllByRole("link");
-    expect(links).toHaveLength(11);
+    expect(links).toHaveLength(10);
     expect(within(nav).getByRole("link", { name: "English" })).toHaveAttribute(
       "href",
       "/support/trpg-dice",

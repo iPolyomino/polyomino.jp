@@ -3,12 +3,11 @@ export const trpgDiceLanguages = [
   { code: "ja", name: "日本語" },
   { code: "ko", name: "한국어" },
   { code: "zh-Hans", name: "简体中文" },
-  { code: "zh-Hant", name: "繁體中文（台灣）" },
-  { code: "zh-Hant-HK", name: "繁體中文（香港）" },
+  { code: "zh-Hant", name: "繁體中文" },
   { code: "de", name: "Deutsch" },
   { code: "fr", name: "Français" },
   { code: "es", name: "Español" },
-  { code: "pt-BR", name: "Português (Brasil)" },
+  { code: "pt", name: "Português" },
   { code: "it", name: "Italiano" },
 ] as const;
 

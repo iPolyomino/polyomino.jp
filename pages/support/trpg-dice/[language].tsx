@@ -3,7 +3,10 @@ import type { GetStaticPropsContext } from "next";
 import TrpgDice from "../trpg-dice";
 import { getMarkdownFile } from "@/lib/api";
 import { markdownToHTML } from "@/lib/markdown";
-import { trpgDiceLanguages } from "@/lib/trpgDiceLanguages";
+import {
+  trpgDiceLanguages,
+  getTrpgDiceLanguage,
+} from "@/lib/trpgDiceLanguages";
 
 export const getStaticPaths = async () => ({
   paths: trpgDiceLanguages
@@ -13,13 +16,14 @@ export const getStaticPaths = async () => ({
 });
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
-  const language = trpgDiceLanguages.find(
-    ({ code }) => code !== "en" && code === params?.language,
+  const language = getTrpgDiceLanguage(
+    "/support/trpg-dice/[language]",
+    params?.language,
   );
-  if (!language) return { notFound: true };
+  if (!language || language === "en") return { notFound: true };
 
   const html = await markdownToHTML(
-    getMarkdownFile(`trpg-dice-privacy-policy/${language.code}`),
+    getMarkdownFile(`trpg-dice-privacy-policy/${language}`),
   );
   return { props: { html } };
 };

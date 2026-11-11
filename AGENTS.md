@@ -74,17 +74,17 @@ URLは `https://polyomino.jp` からの相対パス。
 | `/support/trpg-dice/ko` | `ko` |
 | `/support/trpg-dice/zh-Hans` | `zh-Hans` |
 | `/support/trpg-dice/zh-Hant` | `zh-Hant` |
-| `/support/trpg-dice/zh-Hant-HK` | `zh-Hant-HK` |
 | `/support/trpg-dice/de` | `de` |
 | `/support/trpg-dice/fr` | `fr` |
 | `/support/trpg-dice/es` | `es` |
-| `/support/trpg-dice/pt-BR` | `pt-BR` |
+| `/support/trpg-dice/pt` | `pt` |
 | `/support/trpg-dice/it` | `it` |
 | 404・エラーページ（`/404`、内部ルート `/_error`） | `en` |
 
 ## TRPG DICEの更新
 
 - 英語版の公開先は `/support/trpg-dice`。`/support/trpg-dice/en` は生成しない。
+- 元資料は隣接リポジトリ `../trpg-dice/docs/privacy/`。地域別ではなく言語別に管理する。ポルトガル語は `pt`、繁体字は `zh-Hant` に統一し、旧URLの `pt-BR`・`zh-Hant-HK` は生成せず、リダイレクトも設けない。
 - 既存の台湾版は `zh-Hant` を使用する。`zh-Hant-TW` へのURL変更は未実施なので、標準化を理由に自動変更しない。
 - 言語切り替えの英語リンクはルートへ、その他は対応する言語URLへ向ける。リンクの `lang` と `hrefLang` にも言語タグを設定する。
 - 言語切り替えは本文と同じ `ContentsCard` を使い、白背景を維持する。
