@@ -15,11 +15,11 @@ describe("getPageLanguage", () => {
 
   it.each([
     "/404",
+    "/hobby",
     "/_error",
     "/dtnsim",
     "/hit-and-blow/asobi",
     "/hit-and-blow/solver",
-    "/hobby",
     "/morse",
     "/morse/quiz",
     "/support/rhythmorse",
