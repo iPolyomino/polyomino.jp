@@ -207,8 +207,7 @@ http://www.t3japan.gr.jp/2014_prog1.htm
 ### 数学
 
 - Shing-Tung Yau High School Mathematics Award(overseas) シンガポール,中国にて数学研究の発表を行いました。
-- Canada Wide Virtual Science Fair 1st Prize 8 年連続の 1st Prize を受賞しました。  
-  [制作サイト](http://www.virtualsciencefair.org/2014/inou14m)
+- Canada Wide Virtual Science Fair 1st Prize 8 年連続の 1st Prize を受賞しました。
 - math コン 最終審査へ推薦されました。  
   [詳細](http://www.rimse.or.jp/research/past/winner1st.html)
 - 第 7 回坊ちゃん科学賞 入賞 \`\`切ることの段数に制限のついた階段上チョコレートゲーム'' というタイトルで応募しました。
