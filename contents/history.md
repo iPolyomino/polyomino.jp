@@ -219,7 +219,6 @@ http://www.t3japan.gr.jp/2014_prog1.htm
 - 国際学生対抗バーチャルリアリティコンテストにおいて選考を通過し、展示を行いました。  
   （タイトル：光輝くかぐやの世界、チーム名：バンブー）  
   [詳細](http://ivrc.net/archive/year/%E7%AC%AC25%E5%9B%9E-2017/)
-- プロジェクションマッピングのインタラクティブパートコンテンツを作成しました。観客の集めた雪の総数が時計台に反映されるものでした。  
-  [制作ゲーム](http://ist.ksc.kwansei.ac.jp/miwa/miwaLab/kgpm/interactive/)
+- プロジェクションマッピングのインタラクティブパートコンテンツを作成しました。観客の集めた雪の総数が時計台に反映されるものでした。
 - 全国中学高校 Web コンテスト 金賞  
-  [制作サイト](http://chocolategame.jp/) [コンテストサイト](http://webcon.japias.jp/library/18win/team180020.html)
+  [制作サイト](https://contest.japias.jp/tqj18/180020/) [コンテストサイト](https://webcon.japias.jp/)
