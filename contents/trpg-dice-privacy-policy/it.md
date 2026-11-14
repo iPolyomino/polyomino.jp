@@ -1,6 +1,6 @@
 # Informativa sulla privacy
 
-Data di entrata in vigore: 1 novembre 2026
+Data di entrata in vigore: 14 novembre 2026
 
 Polyomino (“lo Sviluppatore”) tratta le informazioni relative agli utenti dell’app iOS “TRPG DICE” (“l’App”) come descritto di seguito.
 
@@ -16,7 +16,7 @@ L’App utilizza Google AdMob (Google Mobile Ads SDK) per mostrare annunci pubbl
 
 In relazione alla pubblicità, Google e i fornitori di servizi pubblicitari possono raccogliere e trattare informazioni quali il tuo indirizzo IP, la posizione approssimativa ricavata da tale indirizzo, identificativi del dispositivo o dell’app diversi dall’IDFA, impressioni e interazioni con gli annunci, informazioni sugli arresti anomali e dati sulle prestazioni. Queste informazioni possono essere utilizzate per pubblicare annunci e misurarne l’efficacia, prevenire frodi e mantenere e migliorare i servizi.
 
-L’App non richiede l’autorizzazione tramite App Tracking Transparency (ATT) di Apple e non utilizza l’identificativo pubblicitario Identifier for Advertisers (IDFA). Questo non significa che non vengano raccolti o trattati dati in relazione alla pubblicità.
+Prima di richiedere annunci, l’App richiede l’autorizzazione al tracciamento tramite App Tracking Transparency (ATT) di Apple se non è ancora stata presa una decisione. Solo se autorizzi il tracciamento, Google AdMob può accedere al tuo identificativo pubblicitario Identifier for Advertisers (IDFA) e utilizzarlo per personalizzare gli annunci e misurarne l’efficacia. Ciò può comportare il collegamento dei dati dell’App con quelli di app e siti web di altre aziende. Se neghi l’autorizzazione o il tracciamento è limitato, AdMob non riceve il tuo IDFA; i dati pubblicitari descritti sopra possono comunque essere raccolti e trattati. Puoi modificare l’autorizzazione in Impostazioni > Privacy e sicurezza > Tracciamento sul dispositivo. Si applicano anche il consenso e le scelte pubblicitarie regionali descritti di seguito.
 
 Per maggiori informazioni sul trattamento dei dati da parte di Google, consulta:
 
