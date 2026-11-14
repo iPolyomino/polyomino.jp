@@ -1,6 +1,6 @@
 # Politique de confidentialité
 
-Date d’entrée en vigueur : 1er novembre 2026
+Date d’entrée en vigueur : 14 novembre 2026
 
 Polyomino (« le Développeur ») traite les informations relatives aux utilisateurs de l’app iOS « TRPG DICE » (« l’App ») selon les modalités décrites ci-dessous.
 
@@ -16,7 +16,7 @@ L’App utilise Google AdMob (Google Mobile Ads SDK) pour afficher des publicit�
 
 Dans ce cadre, Google et les prestataires publicitaires peuvent collecter et traiter des informations telles que votre adresse IP, la localisation approximative déduite de cette adresse, des identifiants d’appareil ou d’application autres que l’IDFA, les impressions publicitaires et les interactions, ainsi que des informations sur les plantages et les performances. Ces informations peuvent servir à diffuser des publicités et à en mesurer l’efficacité, à prévenir la fraude, ainsi qu’à maintenir et améliorer les services.
 
-L’App ne demande pas d’autorisation via le dispositif App Tracking Transparency (ATT) d’Apple et n’utilise pas l’identifiant publicitaire Identifier for Advertisers (IDFA). Cela ne signifie pas qu’aucune donnée n’est collectée ou traitée dans le cadre de la publicité.
+Avant de demander des publicités, l’App demande l’autorisation de suivi via App Tracking Transparency (ATT) d’Apple si aucune décision n’a encore été prise. Google AdMob ne peut accéder à votre identifiant publicitaire Identifier for Advertisers (IDFA) et l’utiliser pour personnaliser les publicités et mesurer leur efficacité que si vous autorisez le suivi. Cela peut impliquer de relier les données de l’App à celles d’apps et de sites web d’autres entreprises. Si vous refusez ou si le suivi est restreint, AdMob ne reçoit pas votre IDFA ; les données publicitaires décrites ci-dessus peuvent néanmoins être collectées et traitées. Vous pouvez modifier votre autorisation dans Réglages > Confidentialité et sécurité > Suivi sur votre appareil. Les consentements et choix publicitaires régionaux décrits ci-dessous s’appliquent également.
 
 Pour en savoir plus sur le traitement des informations par Google :
 

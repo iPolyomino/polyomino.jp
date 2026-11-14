@@ -1,6 +1,6 @@
 # 隱私權政策
 
-生效日期：2026年11月1日
+生效日期：2026年11月14日
 
 Polyomino（以下稱「開發者」）依照本政策處理 iOS App「TRPG DICE」（以下稱「本 App」）使用者的相關資訊。
 
@@ -16,7 +16,7 @@ Polyomino（以下稱「開發者」）依照本政策處理 iOS App「TRPG DICE
 
 配合廣告服務，Google 及廣告服務供應商可能會蒐集及處理您的 IP 位址、由 IP 位址推估的大致位置、IDFA 以外的裝置或 App 識別資訊、廣告曝光與互動資訊、當機資訊及效能資訊等。這些資訊可能用於投放廣告及評估成效、防範詐欺，以及維持和改善服務。
 
-本 App 不會透過 Apple 的 App Tracking Transparency（ATT）要求追蹤許可，也不使用廣告識別碼 Identifier for Advertisers（IDFA）。但這不代表廣告服務完全不會蒐集或處理資料。
+本 App 在請求廣告前，若追蹤許可尚未決定，會透過 Apple 的 App Tracking Transparency（ATT）要求許可。只有在您允許追蹤時，Google AdMob 才能存取您的廣告識別碼 Identifier for Advertisers（IDFA），並用於個人化廣告及廣告成效評估。這可能涉及將本 App 的資料與其他公司 App 及網站的資料連結。若您拒絕許可或追蹤受到限制，AdMob 不會取得您的 IDFA；但上述廣告相關資料仍可能被蒐集及處理。您可在裝置的「設定」→「隱私權與安全性」→「追蹤」變更許可。下述地區性的廣告同意與選擇亦適用。
 
 如需了解 Google 如何處理資訊，請參閱：
 

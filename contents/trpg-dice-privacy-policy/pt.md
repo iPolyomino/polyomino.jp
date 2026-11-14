@@ -1,6 +1,6 @@
 # Política de Privacidade
 
-Data de vigência: 1º de novembro de 2026
+Data de vigência: 14 de novembro de 2026
 
 A Polyomino (“o Desenvolvedor”) trata as informações dos usuários do app para iOS “TRPG DICE” (“o App”) conforme descrito abaixo.
 
@@ -16,7 +16,7 @@ O App utiliza o Google AdMob (Google Mobile Ads SDK) para exibir anúncios.
 
 Em conexão com a publicidade, o Google e os prestadores de serviços publicitários podem coletar e tratar informações como seu endereço IP, a localização aproximada inferida a partir dele, identificadores do dispositivo ou do app diferentes do IDFA, impressões e interações com anúncios, informações sobre falhas e dados de desempenho. Essas informações podem ser usadas para exibir anúncios e medir sua eficácia, prevenir fraudes e manter e melhorar os serviços.
 
-O App não solicita permissão por meio da App Tracking Transparency (ATT) da Apple e não utiliza o identificador de publicidade Identifier for Advertisers (IDFA). Isso não significa que nenhum dado seja coletado ou tratado em conexão com a publicidade.
+Antes de solicitar anúncios, o App solicita permissão de rastreamento pela App Tracking Transparency (ATT) da Apple quando ainda não há uma decisão. Somente se você permitir o rastreamento, o Google AdMob poderá acessar seu identificador de publicidade Identifier for Advertisers (IDFA) e usá-lo para personalizar anúncios e medir sua eficácia. Isso pode envolver a vinculação de dados do App a dados de apps e sites de outras empresas. Se você negar a permissão ou se o rastreamento estiver restrito, o AdMob não receberá seu IDFA; os dados publicitários descritos acima ainda poderão ser coletados e tratados. Você pode alterar a permissão em Ajustes > Privacidade e Segurança > Rastreamento no seu dispositivo. O consentimento e as escolhas regionais sobre publicidade descritos abaixo também se aplicam.
 
 Para saber mais sobre como o Google trata as informações, consulte:
 
